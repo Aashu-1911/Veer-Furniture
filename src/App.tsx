@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
-import { Collections } from './components/sections/Collections';
+import { WhatWeOffer } from './components/sections/WhatWeOffer';
 import { Gallery } from './components/sections/Gallery';
+import { Collections } from './components/sections/Collections';
 import { Reviews } from './components/sections/Reviews';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/layout/Footer';
@@ -14,9 +15,14 @@ import { useActiveSection } from './hooks/useActiveSection';
 
 export const App: React.FC = () => {
   const [isPreloaderDone, setIsPreloaderDone] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   
-  const sectionIds = ['home', 'about', 'collections', 'gallery', 'reviews', 'contact'];
+  const sectionIds = ['home', 'about', 'offerings', 'gallery', 'collections', 'reviews', 'location'];
   const activeSection = useActiveSection(sectionIds, 120);
+
+  const handleSelectCategoryFromOfferings = (cat: string) => {
+    setSelectedCategory(cat);
+  };
 
   return (
     <div className="min-h-screen bg-brand-surface text-brand-dark flex flex-col font-sans selection:bg-brand-champagne selection:text-brand-dark">
@@ -37,14 +43,29 @@ export const App: React.FC = () => {
       <Navbar activeSection={activeSection} />
 
       <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
+        {/* 1. Home / Hero */}
         <Hero />
+
+        {/* 2. Our Story / About */}
         <About />
-        <Collections />
+
+        {/* 3. What We Offer */}
+        <WhatWeOffer onSelectCategory={handleSelectCategoryFromOfferings} />
+
+        {/* 4. Our Showroom / Gallery */}
         <Gallery />
+
+        {/* 5. Browse Our Collection */}
+        <Collections initialFilter={selectedCategory} />
+
+        {/* 6. Customer Reviews */}
         <Reviews />
+
+        {/* 7. Visit Our Store */}
         <Contact />
       </main>
 
+      {/* 8. Contact / Footer */}
       <Footer />
 
       {/* Interactive Utilities */}

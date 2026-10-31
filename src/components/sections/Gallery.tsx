@@ -39,29 +39,29 @@ export const Gallery: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
           <SectionHeading
-            eyebrow="Visual Living Archive"
-            title="Spatial Aesthetics & Craftsmanship"
-            description="Explore our living, resting, and dining installations. Click any frame to inspect textural details and dimension options."
-            className="mb-0"
+            eyebrow="Our Showroom"
+            title="Showroom Gallery & Real Spaces"
+            description="A glimpse of living, resting, and dining arrangements inside our Lohgaon showroom."
+            className="mb-0 max-w-2xl"
           />
 
-          <div className="text-xs text-brand-muted flex items-center gap-2">
-            <Sparkles aria-hidden="true" className="w-4 h-4 text-brand-champagne flex-shrink-0" />
-            <span>Curated architectural references & authentic showroom vignettes</span>
+          <div className="text-xs text-brand-muted flex items-center gap-2 self-start md:self-end">
+            <Sparkles aria-hidden="true" className="w-3.5 h-3.5 text-brand-champagne flex-shrink-0" />
+            <span>Click any image to inspect in full resolution</span>
           </div>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar" role="tablist" aria-label="Gallery Filters">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar" role="tablist" aria-label="Gallery Filters">
           {categories.map((cat) => (
             <button
               key={cat}
               role="tab"
               aria-selected={activeCategory === cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs uppercase tracking-wider px-4 py-2 transition-all whitespace-nowrap cursor-pointer border ${
+              className={`text-xs uppercase tracking-wider px-3.5 py-1.5 transition-all whitespace-nowrap cursor-pointer border ${
                 activeCategory === cat
                   ? 'bg-brand-dark text-white border-brand-dark font-medium shadow-subtle'
                   : 'bg-white text-brand-dark/70 border-brand-border hover:bg-brand-cream hover:text-brand-dark'
@@ -72,8 +72,8 @@ export const Gallery: React.FC = () => {
           ))}
         </div>
 
-        {/* Asymmetrical Editorial Image Grid - 2 cols on mobile, 2 on tablet, 3 on desktop */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+        {/* Balanced Editorial Image Grid: 2 cols on mobile, 3 on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
           {filteredItems.map((item) => {
             const spanClass = item.aspectRatio === 'wide'
               ? 'sm:col-span-2 lg:col-span-2'
@@ -92,10 +92,10 @@ export const Gallery: React.FC = () => {
                     openLightbox(item);
                   }
                 }}
-                className={`group relative overflow-hidden bg-brand-charcoal cursor-pointer border border-brand-border shadow-subtle transition-all duration-300 hover:shadow-architectural focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:outline-none ${spanClass}`}
+                className={`group relative overflow-hidden bg-brand-charcoal cursor-pointer border border-brand-border shadow-subtle transition-all duration-300 hover:shadow-subtle focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:outline-none ${spanClass}`}
               >
-                {/* Image Container - Compact on mobile, spacious on tablet/desktop */}
-                <div className="relative overflow-hidden h-40 sm:h-72 lg:h-88 w-full">
+                {/* Image Container: balanced ~140px mobile, ~240px desktop */}
+                <div className="relative overflow-hidden h-36 sm:h-56 lg:h-64 w-full">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
@@ -104,24 +104,18 @@ export const Gallery: React.FC = () => {
                   />
 
                   {/* Gradient & Caption Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/40 to-transparent flex flex-col justify-end p-2.5 sm:p-6 text-white transition-opacity duration-300 opacity-90 sm:opacity-0 sm:group-hover:opacity-100">
-                    <div className="flex items-center justify-between text-[9px] sm:text-xs text-brand-champagne uppercase tracking-wider sm:tracking-widest font-medium mb-0.5 sm:mb-1">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent flex flex-col justify-end p-2.5 sm:p-5 text-white transition-opacity duration-300 opacity-90 sm:opacity-0 sm:group-hover:opacity-100">
+                    <div className="flex items-center justify-between text-[9px] sm:text-xs text-brand-champagne uppercase tracking-wider font-medium mb-0.5">
                       <span className="truncate">{item.category}</span>
-                      <Maximize2 aria-hidden="true" className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 ml-1 opacity-80" />
+                      <Maximize2 aria-hidden="true" className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0 ml-1 opacity-80" />
                     </div>
-                    <h3 className="font-display text-xs sm:text-base lg:text-lg font-medium text-white truncate sm:line-clamp-none">
+                    <h3 className="font-display text-xs sm:text-sm lg:text-base font-medium text-white truncate sm:line-clamp-none">
                       {item.title}
                     </h3>
-                    <p className="hidden sm:block text-zinc-300 text-xs mt-1 line-clamp-2">
-                      {item.description}
-                    </p>
-                    <span className="hidden sm:inline-block text-[10px] text-brand-champagne uppercase tracking-wider mt-2 font-mono">
-                      Click to inspect in fullscreen
-                    </span>
                   </div>
 
-                  {/* Top-Right Category Pill (Visible at rest on tablet/desktop) */}
-                  <div className="hidden sm:block absolute top-3 right-3 bg-brand-dark/75 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider px-2.5 py-1 font-medium group-hover:opacity-0 transition-opacity">
+                  {/* Top-Right Category Pill */}
+                  <div className="hidden sm:block absolute top-2.5 right-2.5 bg-brand-dark/75 backdrop-blur-sm text-white text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium group-hover:opacity-0 transition-opacity">
                     {item.category}
                   </div>
                 </div>

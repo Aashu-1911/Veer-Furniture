@@ -11,7 +11,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
-    // Check if user prefers reduced motion
+    // Respect user prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       onComplete();
@@ -19,23 +19,28 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       return;
     }
 
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            setIsFinished(true);
-            onComplete();
-          }, 350);
-          return 100;
-        }
-        // Organic accelerated progression
-        const increment = prev < 50 ? 8 : prev < 85 ? 12 : 15;
-        return Math.min(100, prev + increment);
-      });
-    }, 45);
+    const startTime = performance.now();
+    const targetDuration = 2000; // 2.0 seconds total polished loading experience
 
-    return () => clearInterval(interval);
+    const timer = setInterval(() => {
+      const elapsed = performance.now() - startTime;
+      const rawProgress = Math.min(1, elapsed / targetDuration);
+      
+      // Easing curve (ease-out cubic) for a natural, luxurious progression
+      const easedProgress = Math.round((1 - Math.pow(1 - rawProgress, 3)) * 100);
+
+      setProgress(easedProgress);
+
+      if (rawProgress >= 1) {
+        clearInterval(timer);
+        setTimeout(() => {
+          setIsFinished(true);
+          onComplete();
+        }, 180);
+      }
+    }, 24);
+
+    return () => clearInterval(timer);
   }, [onComplete]);
 
   return (
@@ -43,67 +48,56 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       {!isFinished && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+          exit={{ opacity: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-brand-dark text-white px-6 select-none"
         >
-          {/* Architectural Framing Motif */}
-          <div className="relative w-full max-w-md flex flex-col items-center">
-            {/* Geometric architectural drafting lines with Logo */}
-            <div className="w-20 h-20 sm:w-24 sm:h-24 mb-8 relative flex items-center justify-center">
-              <motion.div
-                initial={{ rotate: 0 }}
-                animate={{ rotate: 90 }}
-                transition={{ duration: 1.2, ease: 'easeInOut' }}
-                className="absolute inset-0 border border-brand-champagne/40"
-              />
-              <motion.div
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center"
-              >
-                <img
-                  src="/logo.png"
-                  alt="Veer Furniture Mall Logo"
-                  className="w-full h-full object-contain filter drop-shadow-[0_2px_12px_rgba(200,162,106,0.4)]"
-                />
-              </motion.div>
-            </div>
-
-            {/* Brand Wordmark & Location */}
+          <div className="relative w-full max-w-sm flex flex-col items-center text-center">
+            
+            {/* Smooth Logo Reveal Animation */}
             <motion.div
-              initial={{ y: 15, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-center"
+              initial={{ opacity: 0, scale: 0.92, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-6 relative flex items-center justify-center"
             >
-              <span className="text-[10px] sm:text-xs uppercase tracking-ultra text-brand-champagne font-medium block mb-2">
-                Architectural Furniture Atelier
-              </span>
-              <h1 className="font-display text-2xl sm:text-3xl tracking-widest uppercase font-semibold text-white">
-                {BUSINESS_DATA.name}
-              </h1>
-              <p className="text-zinc-400 text-xs tracking-widest uppercase mt-2">
-                {BUSINESS_DATA.branch} · {BUSINESS_DATA.coordinates.formatted}
-              </p>
+              <img
+                src="/logo.png"
+                alt="Veer Furniture Mall Logo"
+                className="h-20 w-20 sm:h-24 sm:w-24 object-contain filter drop-shadow-[0_2px_18px_rgba(200,162,106,0.35)]"
+              />
             </motion.div>
 
-            {/* Refined Progress Bar */}
-            <div className="w-48 sm:w-64 h-[2px] bg-white/10 mt-10 relative overflow-hidden">
+            {/* Brand Identification */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-1.5"
+            >
+              <span className="text-[10px] uppercase tracking-ultra text-brand-champagne font-medium block">
+                Furniture Mall · Lohgaon, Pune
+              </span>
+              <h2 className="font-display text-xl sm:text-2xl tracking-widest uppercase font-semibold text-white">
+                {BUSINESS_DATA.name}
+              </h2>
+            </motion.div>
+
+            {/* Refined Gold Progress Indicator */}
+            <div className="w-48 sm:w-56 h-[2px] bg-white/10 rounded-full mt-8 relative overflow-hidden">
               <motion.div
-                className="absolute top-0 bottom-0 left-0 bg-brand-champagne"
+                className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-brand-champagne/80 via-brand-champagne to-brand-champagneLight rounded-full"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: 'linear' }}
               />
             </div>
 
-            <span className="text-[10px] tracking-widest text-zinc-500 font-mono mt-3">
-              ENTERING ATELIER {progress}%
-            </span>
+            <div className="mt-3 text-[10px] tracking-widest text-zinc-400 font-mono">
+              LOADING SHOWROOM {progress}%
+            </div>
+
           </div>
         </motion.div>
       )}
     </AnimatePresence>
   );
 };
-

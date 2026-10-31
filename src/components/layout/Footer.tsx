@@ -85,13 +85,13 @@ export const Footer: React.FC = () => {
               Collections
             </h4>
             <ul className="space-y-3">
-              {COLLECTIONS_DATA.slice(0, 5).map((col) => (
-                <li key={col.id}>
+              {Array.from(new Set(COLLECTIONS_DATA.map((c) => c.category))).slice(0, 5).map((categoryName) => (
+                <li key={categoryName}>
                   <button
                     onClick={() => scrollToSection('#collections')}
                     className="text-zinc-300 hover:text-brand-champagne transition-colors text-sm text-left line-clamp-1 cursor-pointer"
                   >
-                    {col.category}
+                    {categoryName}
                   </button>
                 </li>
               ))}

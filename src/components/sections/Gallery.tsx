@@ -14,7 +14,6 @@ export const Gallery: React.FC = () => {
     'All',
     'Living Room',
     'Bedroom',
-    'Dining',
     'Custom Interiors',
     'Showroom Floor',
   ];

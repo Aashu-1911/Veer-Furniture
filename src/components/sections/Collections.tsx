@@ -24,7 +24,8 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
     'Living Room',
     'Bedroom Furniture',
     'Wardrobes & Storage',
-    'Dining Room',
+    'TV Consoles & Wall Units',
+    'Custom Interiors',
     'Complete Home Combos',
   ];
 

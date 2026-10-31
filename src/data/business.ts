@@ -44,11 +44,11 @@ export const BUSINESS_DATA: BusinessDetails = {
   },
   categoriesOffered: [
     'Living Room & Sectional Sofas',
-    'Luxury Bedroom & Hydraulic Beds',
-    'Sliding Wardrobes & Storage',
-    'Designer Dining Suites',
+    'Hydraulic Storage Beds & Platforms',
+    'Modern Sliding Wardrobes',
     'Architectural TV Consoles & Wall Units',
-    'Coffee Tables & Accent Seating',
+    'Solid Teakwood Seating & Diwans',
+    'Handcrafted Wooden Home Temples',
     'Complete 2BHK / 3BHK Home Packages',
   ],
 };

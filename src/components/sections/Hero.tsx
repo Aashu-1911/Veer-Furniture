@@ -63,8 +63,8 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <div className="relative overflow-hidden border border-white/15 shadow-architectural bg-brand-charcoal">
               <img
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=85"
-                alt="Curated living room furniture at Veer Furniture Mall Lohgaon"
+                src="/assets/images/img-1.png"
+                alt="Living room sofa set display at Veer Furniture Mall Lohgaon"
                 className="w-full h-64 sm:h-88 lg:h-[400px] object-cover object-center transition-transform duration-700 hover:scale-105"
                 loading="eager"
               />

@@ -56,31 +56,27 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 className="h-10 w-10 sm:h-11 sm:w-11 object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)] transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
 
-              <div className="flex flex-col text-left">
-                <div className="flex items-center gap-1.5">
-                  <span
-                    className={`font-display text-lg sm:text-xl font-semibold tracking-wider uppercase transition-colors ${
-                      isScrolled ? 'text-brand-dark group-hover:text-brand-teak' : 'text-white'
-                    }`}
-                  >
-                    VEER
-                  </span>
-                  <span
-                    className={`text-[8px] uppercase tracking-wider px-1 py-0.5 border ${
-                      isScrolled
-                        ? 'border-brand-teak/30 text-brand-teak'
-                        : 'border-brand-champagne/60 text-brand-champagne'
-                    }`}
-                  >
-                    LOHGAON
-                  </span>
-                </div>
+              <div className="flex flex-col text-left justify-center leading-none">
                 <span
-                  className={`text-[9px] tracking-wider uppercase font-light transition-colors ${
-                    isScrolled ? 'text-brand-muted' : 'text-zinc-300'
+                  className={`font-display text-lg sm:text-xl font-bold tracking-wider uppercase leading-tight transition-colors ${
+                    isScrolled ? 'text-brand-dark group-hover:text-brand-teak' : 'text-white'
                   }`}
                 >
-                  Furniture Mall · Pune
+                  VEER
+                </span>
+                <span
+                  className={`text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase mt-0.5 transition-colors whitespace-nowrap ${
+                    isScrolled ? 'text-brand-teak' : 'text-brand-champagne'
+                  }`}
+                >
+                  FURNITURE MALL
+                </span>
+                <span
+                  className={`text-[8px] tracking-wider uppercase font-medium mt-0.5 transition-colors whitespace-nowrap ${
+                    isScrolled ? 'text-brand-muted' : 'text-zinc-400'
+                  }`}
+                >
+                  PUNE AIRPORT AREA
                 </span>
               </div>
             </a>
@@ -111,34 +107,37 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               })}
             </nav>
 
-            {/* Right Action buttons (Desktop) */}
+            {/* Right Action buttons (Desktop) — Visually Identical Dimensions (185px x 44px) */}
             <div className="hidden md:flex items-center space-x-2.5 flex-shrink-0">
-              {/* Compact Phone Number */}
+              {/* Phone Button */}
               <a
                 href={BUSINESS_DATA.contact.phoneCallable}
                 aria-label={`Call Showroom at ${BUSINESS_DATA.contact.phoneDisplay}`}
-                className={`flex items-center gap-1.5 whitespace-nowrap text-xs font-semibold px-3 py-2 transition-all border select-none ${
+                className={`w-[165px] lg:w-[185px] h-[44px] flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all border select-none whitespace-nowrap ${
                   isScrolled
-                    ? 'border-brand-border bg-white text-brand-dark hover:bg-brand-cream hover:border-brand-teak'
-                    : 'border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-brand-champagne'
+                    ? 'border-brand-border bg-white text-brand-dark hover:bg-brand-cream hover:border-brand-teak shadow-subtle'
+                    : 'border-white/25 bg-white/5 text-white hover:bg-white/10 hover:border-brand-champagne'
                 }`}
               >
                 <Phone className="w-3.5 h-3.5 text-brand-champagne flex-shrink-0" />
                 <span>{BUSINESS_DATA.contact.phoneDisplay}</span>
               </a>
 
-              {/* Primary Showroom CTA */}
-              <button
-                onClick={() => scrollToSection('#location')}
-                className={`flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold px-3.5 py-2 transition-all cursor-pointer shadow-subtle whitespace-nowrap ${
+              {/* Visit Showroom Button */}
+              <a
+                href={BUSINESS_DATA.maps.directUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Veer Furniture Mall Lohgaon on Google Maps"
+                className={`w-[165px] lg:w-[185px] h-[44px] flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer whitespace-nowrap border ${
                   isScrolled
-                    ? 'bg-brand-dark text-white hover:bg-brand-teak'
-                    : 'bg-brand-champagne text-brand-dark hover:bg-brand-champagneLight'
+                    ? 'border-brand-dark bg-brand-dark text-white hover:bg-brand-teak hover:border-brand-teak shadow-subtle'
+                    : 'border-brand-champagne bg-brand-champagne text-brand-dark hover:bg-brand-champagneLight hover:border-brand-champagneLight shadow-subtle'
                 }`}
               >
-                <Navigation className="w-3 h-3" />
-                <span>Visit Showroom</span>
-              </button>
+                <Navigation className="w-3.5 h-3.5 flex-shrink-0" />
+                <span>VISIT SHOWROOM</span>
+              </a>
             </div>
 
             {/* Mobile Menu Hamburger (Only logo and menu button on mobile header) */}

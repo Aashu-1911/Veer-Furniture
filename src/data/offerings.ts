@@ -57,3 +57,4 @@ export const OFFERINGS_DATA: OfferingCategory[] = [
     categoryFilter: 'Complete Home Combos',
   },
 ];
+

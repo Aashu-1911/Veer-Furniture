@@ -82,3 +82,4 @@ export const WhatWeOffer: React.FC<WhatWeOfferProps> = ({ onSelectCategory }) =>
     </section>
   );
 };
+

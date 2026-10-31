@@ -1,9 +1,11 @@
 import React from 'react';
-import { MapPin, Phone, MessageSquare, Clock, ExternalLink, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Clock, ExternalLink, ArrowRight } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { BUSINESS_DATA } from '../../data/business';
 import { NAV_ITEMS } from '../../data/navigation';
 import { COLLECTIONS_DATA } from '../../data/collections';
 import { scrollToSection } from '../../lib/utils';
+import logoImg from '../../assets/images/logo.png';
 
 export const Footer: React.FC = () => {
   return (
@@ -15,16 +17,19 @@ export const Footer: React.FC = () => {
             <div>
               <div className="flex items-center gap-3.5 mb-2">
                 <img
-                  src="/logo.png"
+                  src={logoImg}
                   alt="Veer Furniture Mall Logo"
                   className="h-12 w-12 object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)] flex-shrink-0"
                 />
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col text-left leading-none">
                   <span className="font-display text-2xl tracking-widest uppercase font-semibold text-white">
                     VEER
                   </span>
-                  <span className="text-[10px] tracking-ultra text-brand-champagne uppercase px-2 py-0.5 border border-brand-champagne/40">
-                    LOHGAON PUNE
+                  <span className="text-[10px] font-semibold tracking-widest uppercase text-brand-champagne mt-0.5">
+                    FURNITURE MALL
+                  </span>
+                  <span className="text-[8px] tracking-wider uppercase font-medium text-zinc-400 mt-0.5">
+                    PUNE AIRPORT AREA
                   </span>
                 </div>
               </div>
@@ -123,7 +128,7 @@ export const Footer: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-2.5">
-                <MessageSquare className="w-4 h-4 text-[#25D366] flex-shrink-0" />
+                <FaWhatsapp className="w-4 h-4 text-[#25D366] flex-shrink-0" />
                 <a
                   href={`https://wa.me/${BUSINESS_DATA.contact.whatsappNumber}?text=${encodeURIComponent(
                     BUSINESS_DATA.contact.whatsappPreFilledText

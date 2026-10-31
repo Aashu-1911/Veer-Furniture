@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
 
             {/* Short Supporting Description */}
             <p className="font-sans text-sm sm:text-base lg:text-lg text-zinc-300 font-light max-w-xl leading-relaxed">
-              Step inside our Yojna Nagar showroom. Discover handcrafted living room sofas, hydraulic storage beds, sliding wardrobes, and complete apartment packages at honest wholesale prices.
+              Direct showroom living, bedroom, and dining furniture crafted for modern Pune homes.
             </p>
 
             {/* Two Primary CTAs */}

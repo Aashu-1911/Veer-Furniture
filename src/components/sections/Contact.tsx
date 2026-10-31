@@ -5,7 +5,6 @@ import { Button } from '../ui/Button';
 import {
   MapPin,
   Phone,
-  MessageSquare,
   Clock,
   Navigation,
   ExternalLink,
@@ -13,6 +12,7 @@ import {
   CheckCircle,
   AlertCircle,
 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -157,7 +157,7 @@ export const Contact: React.FC = () => {
             <div className="bg-[#25D366]/10 border border-[#25D366]/30 p-4 flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-[#25D366] text-white flex items-center justify-center flex-shrink-0">
-                  <MessageSquare aria-hidden="true" className="w-4 h-4 fill-current" />
+                  <FaWhatsapp aria-hidden="true" className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-xs font-semibold text-brand-dark block">

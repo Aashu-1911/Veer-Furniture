@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
-import { X, Phone, MessageSquare, MapPin, Clock } from 'lucide-react';
+import { X, Phone, MapPin, Clock } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { NAV_ITEMS } from '../../data/navigation';
 import { BUSINESS_DATA } from '../../data/business';
 import { scrollToSection } from '../../lib/utils';
+import logoImg from '../../assets/images/logo.png';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -35,16 +37,19 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
         <div className="flex items-center gap-3">
           <img
-            src="/logo.png"
+            src={logoImg}
             alt="Veer Furniture Mall Logo"
-            className="h-11 w-11 object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)]"
+            className="h-10 w-10 object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)]"
           />
-          <div>
-            <span className="font-display text-lg tracking-widest uppercase font-semibold text-white">
+          <div className="flex flex-col text-left leading-none">
+            <span className="font-display text-lg font-bold tracking-wider uppercase text-white">
               VEER
             </span>
-            <span className="text-[10px] tracking-widest uppercase text-brand-champagne ml-2">
-              Lohgaon Branch
+            <span className="text-[9px] font-semibold tracking-widest uppercase text-brand-champagne mt-0.5">
+              FURNITURE MALL
+            </span>
+            <span className="text-[8px] tracking-wider uppercase font-medium text-zinc-400 mt-0.5">
+              PUNE AIRPORT AREA
             </span>
           </div>
         </div>
@@ -101,7 +106,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs uppercase tracking-widest font-semibold transition-colors"
             >
-              <MessageSquare className="w-4 h-4" />
+              <FaWhatsapp className="w-4 h-4 flex-shrink-0" />
               <span>Enquire on WhatsApp</span>
             </a>
           </div>
@@ -121,4 +126,3 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
     </div>
   );
 };
-

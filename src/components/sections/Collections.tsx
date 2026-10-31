@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { COLLECTIONS_DATA } from '../../data/collections';
 import { BUSINESS_DATA } from '../../data/business';
-import { MessageSquare, ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { scrollToSection } from '../../lib/utils';
 
 interface CollectionsProps {
@@ -127,9 +128,9 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#1DA851] hover:text-[#128C3E] uppercase tracking-wider cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#25D366] hover:text-[#1da851] uppercase tracking-wider cursor-pointer transition-colors"
                     >
-                      <MessageSquare aria-hidden="true" className="w-3.5 h-3.5 fill-current" />
+                      <FaWhatsapp aria-hidden="true" className="w-3.5 h-3.5 flex-shrink-0" />
                       <span>WhatsApp Price</span>
                     </a>
 
@@ -169,7 +170,7 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-brand-champagne text-brand-dark font-semibold text-xs uppercase tracking-wider hover:bg-brand-champagneLight transition-colors whitespace-nowrap self-stretch sm:self-auto"
           >
-            <MessageSquare aria-hidden="true" className="w-4 h-4" />
+            <FaWhatsapp aria-hidden="true" className="w-4 h-4 flex-shrink-0" />
             <span>Get Package Quotation</span>
           </a>
         </div>

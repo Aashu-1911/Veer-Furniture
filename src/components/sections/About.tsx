@@ -10,22 +10,22 @@ export const About: React.FC = () => {
     {
       icon: Compass,
       title: 'Apartment-Fit Sizing',
-      description: 'We customize sofa configurations, bed sizes, and wardrobe partitions to your exact room blueprints.',
+      description: 'Customized to your exact room blueprints.',
     },
     {
       icon: ShieldCheck,
       title: 'Wholesale Direct Pricing',
-      description: 'Transparent rates without middleman showroom markups. Seasoned hardwoods and German gas-lift struts.',
+      description: 'Factory-direct rates without middleman markups.',
     },
     {
       icon: CheckCircle2,
       title: 'In-Store Material Testing',
-      description: 'Visit our Yojna Nagar showroom to feel solid wood grains, foam densities, and upholstery fabrics in person.',
+      description: 'Inspect seasoned woods and upholstery in person.',
     },
     {
       icon: Truck,
       title: 'Doorstep Assembly',
-      description: 'Careful transport and on-site expert assembly across Lohgaon, Dhanori, Viman Nagar, Wagholi, and Pune.',
+      description: 'Careful transport and professional installation across Pune.',
     },
   ];
 
@@ -64,10 +64,7 @@ export const About: React.FC = () => {
             
             <div className="space-y-3 text-brand-muted text-sm sm:text-base leading-relaxed">
               <p>
-                Located at <strong className="text-brand-dark font-semibold">Yojna Nagar</strong> on the Lohegaon-Wagholi Road corridor, our showroom was established to bridge the gap between exorbitant boutique prices and fragile flat-pack alternatives.
-              </p>
-              <p>
-                Whether you are furnishing a new 2BHK flat near Pune Airport or upgrading your family home, we offer direct access to honest wood specifications, European slider hardware, and bespoke dimension tailoring.
+                Located at <strong className="text-brand-dark font-semibold">Yojna Nagar</strong> on Lohegaon-Wagholi Road, Veer Furniture Mall bridges the gap between high boutique markups and fragile furniture. We provide direct access to premium hardwoods, smooth hydraulic mechanisms, and custom sizing designed for modern Pune homes.
               </p>
             </div>
 

@@ -73,7 +73,7 @@ export interface CustomerReview {
   rating: number;
   reviewDate: string;
   reviewText: string;
-  source: 'Google' | 'Justdial';
+  source: 'Google' | 'Google Maps' | 'Justdial';
   verifiedCustomer: boolean;
   locationContext?: string;
 }

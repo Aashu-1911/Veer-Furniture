@@ -97,4 +97,12 @@ export const GALLERY_DATA: GalleryItem[] = [
     imageUrl: '/assets/images/img-13.png',
     aspectRatio: 'portrait',
   },
+  {
+    id: 'gal-13',
+    title: 'Veer Furniture Mall — Lohgaon Grand Entrance & Facade',
+    category: 'Showroom Floor',
+    description: 'Our primary multi-floor furniture showroom located at Yojna Nagar on Lohegaon-Wagholi Road.',
+    imageUrl: '/assets/images/img-14.png',
+    aspectRatio: 'landscape',
+  },
 ];

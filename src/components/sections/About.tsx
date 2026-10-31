@@ -47,14 +47,13 @@ export const About: React.FC = () => {
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative overflow-hidden border border-brand-border shadow-subtle bg-white">
               <img
-                src="/assets/images/img-8.png"
-                alt="Showroom display of double beds at Veer Furniture Mall Lohgaon"
+                src="/assets/images/img-14.png"
+                alt="Veer Furniture Mall Lohgaon showroom storefront and entrance facade"
                 className="w-full h-72 sm:h-88 lg:h-[380px] object-cover object-center transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
               <div className="p-3.5 bg-white border-t border-brand-border flex items-center justify-between text-xs">
-                <span className="font-display font-semibold text-brand-dark">Showroom Bed & Mandir Floor</span>
-                <span className="text-brand-teak font-medium">Lohgaon Display</span>
+                <span className="text-brand-teak font-medium">Veer Furniture Mall — Lohgaon Storefront</span>
               </div>
             </div>
           </div>

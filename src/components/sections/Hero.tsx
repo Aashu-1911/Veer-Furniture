@@ -83,14 +83,14 @@ export const Hero: React.FC = () => {
           <div className="flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm text-zinc-300 font-normal">
             <div className="flex items-center gap-2">
               <span className="text-brand-champagne font-semibold text-base font-display">4.9 ★</span>
-              <span>Verified Google Rating ({BUSINESS_DATA.reputation.googleReviewCount}+ Reviews)</span>
+              <span>Verified Google Maps Rating</span>
             </div>
 
             <div className="hidden md:inline-block w-1 h-1 rounded-full bg-white/30" />
 
             <div className="flex items-center gap-2">
-              <span className="text-white font-semibold font-display">320+</span>
-              <span>Pune Homeowners Served</span>
+              <span className="text-white font-semibold font-display">Wholesale</span>
+              <span>Direct Factory Showroom Rates</span>
             </div>
 
             <div className="hidden md:inline-block w-1 h-1 rounded-full bg-white/30" />

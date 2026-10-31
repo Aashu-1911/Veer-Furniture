@@ -132,7 +132,7 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                       className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#25D366] hover:text-[#1da851] uppercase tracking-wider cursor-pointer transition-colors"
                     >
                       <FaWhatsapp aria-hidden="true" className="w-3.5 h-3.5 flex-shrink-0" />
-                      <span>WhatsApp Price</span>
+                      <span>Enquiry</span>
                     </a>
 
                     <button

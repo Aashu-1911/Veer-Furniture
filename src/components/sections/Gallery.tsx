@@ -72,8 +72,8 @@ export const Gallery: React.FC = () => {
           ))}
         </div>
 
-        {/* Asymmetrical Editorial Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Asymmetrical Editorial Image Grid - 2 cols on mobile, 2 on tablet, 3 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {filteredItems.map((item) => {
             const spanClass = item.aspectRatio === 'wide'
               ? 'sm:col-span-2 lg:col-span-2'
@@ -94,8 +94,8 @@ export const Gallery: React.FC = () => {
                 }}
                 className={`group relative overflow-hidden bg-brand-charcoal cursor-pointer border border-brand-border shadow-subtle transition-all duration-300 hover:shadow-architectural focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:outline-none ${spanClass}`}
               >
-                {/* Image */}
-                <div className="relative overflow-hidden aspect-[4/3] sm:aspect-auto h-72 sm:h-88 w-full">
+                {/* Image Container - Compact on mobile, spacious on tablet/desktop */}
+                <div className="relative overflow-hidden h-40 sm:h-72 lg:h-88 w-full">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
@@ -103,25 +103,25 @@ export const Gallery: React.FC = () => {
                     loading="lazy"
                   />
 
-                  {/* Gradient & Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
-                    <div className="flex items-center justify-between text-xs text-brand-champagne uppercase tracking-widest font-medium mb-1">
-                      <span>{item.category}</span>
-                      <Maximize2 aria-hidden="true" className="w-4 h-4" />
+                  {/* Gradient & Caption Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/40 to-transparent flex flex-col justify-end p-2.5 sm:p-6 text-white transition-opacity duration-300 opacity-90 sm:opacity-0 sm:group-hover:opacity-100">
+                    <div className="flex items-center justify-between text-[9px] sm:text-xs text-brand-champagne uppercase tracking-wider sm:tracking-widest font-medium mb-0.5 sm:mb-1">
+                      <span className="truncate">{item.category}</span>
+                      <Maximize2 aria-hidden="true" className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 ml-1 opacity-80" />
                     </div>
-                    <h3 className="font-display text-lg font-medium text-white">
+                    <h3 className="font-display text-xs sm:text-base lg:text-lg font-medium text-white truncate sm:line-clamp-none">
                       {item.title}
                     </h3>
-                    <p className="text-zinc-300 text-xs mt-1 line-clamp-2">
+                    <p className="hidden sm:block text-zinc-300 text-xs mt-1 line-clamp-2">
                       {item.description}
                     </p>
-                    <span className="text-[10px] text-brand-champagne uppercase tracking-wider mt-2 font-mono">
+                    <span className="hidden sm:inline-block text-[10px] text-brand-champagne uppercase tracking-wider mt-2 font-mono">
                       Click to inspect in fullscreen
                     </span>
                   </div>
 
-                  {/* Top-Right Category Pill (Visible at rest) */}
-                  <div className="absolute top-3 right-3 bg-brand-dark/75 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider px-2.5 py-1 font-medium group-hover:opacity-0 transition-opacity">
+                  {/* Top-Right Category Pill (Visible at rest on tablet/desktop) */}
+                  <div className="hidden sm:block absolute top-3 right-3 bg-brand-dark/75 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider px-2.5 py-1 font-medium group-hover:opacity-0 transition-opacity">
                     {item.category}
                   </div>
                 </div>

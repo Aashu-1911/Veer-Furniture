@@ -1,177 +1,219 @@
 import React from 'react';
-import { MapPin, Phone, Clock, ExternalLink, ArrowRight } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa6';
+import { MapPin, Phone, Clock, Mail, Instagram, Facebook, MessageSquare } from 'lucide-react';
 import { BUSINESS_DATA } from '../../data/business';
-import { NAV_ITEMS } from '../../data/navigation';
-import { COLLECTIONS_DATA } from '../../data/collections';
 import { scrollToSection } from '../../lib/utils';
 import logoImg from '../../assets/images/logo.png';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-dark text-white border-t border-brand-charcoal pt-16 sm:pt-20 pb-12">
+    <footer className="bg-[#121316] text-white border-t border-white/10 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 sm:gap-12 pb-16 border-b border-white/10">
-          {/* Col 1 & 2: Brand Identity and Architectural Statement */}
-          <div className="lg:col-span-2 space-y-6">
-            <div>
-              <div className="flex items-center gap-3.5 mb-2">
+        
+        {/* Main 3-Column Grid Matching Chakan Reference Exactly */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12">
+          
+          {/* Col 1 (Left): Brand Identity, Tagline, Socials (lg:col-span-4) */}
+          <div className="lg:col-span-4 flex flex-col">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-brand-charcoal border border-white/20 p-1 flex items-center justify-center flex-shrink-0 shadow-md">
                 <img
                   src={logoImg}
                   alt="Veer Furniture Mall Logo"
-                  className="h-12 w-12 object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)] flex-shrink-0"
+                  className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)]"
                 />
-                <div className="flex flex-col text-left leading-none">
-                  <span className="font-display text-2xl tracking-widest uppercase font-semibold text-white">
-                    VEER
-                  </span>
-                  <span className="text-[10px] font-semibold tracking-widest uppercase text-brand-champagne mt-0.5">
-                    FURNITURE MALL
-                  </span>
-                  <span className="text-[8px] tracking-wider uppercase font-medium text-zinc-400 mt-0.5">
-                    PUNE AIRPORT AREA
-                  </span>
-                </div>
               </div>
-              <p className="text-zinc-400 text-sm tracking-wide font-light">
-                Furniture Mall · Showroom & Wholesale Living Gallery
-              </p>
+              <div className="flex flex-col">
+                <span className="font-display text-base sm:text-lg font-bold uppercase tracking-wider leading-none text-white">
+                  VEER FURNITURE
+                </span>
+                <span className="font-sans text-[9px] uppercase tracking-[0.2em] font-bold leading-normal mt-1 text-brand-champagne">
+                  PREMIUM SHOWROOM
+                </span>
+              </div>
             </div>
 
-            <p className="text-zinc-300 text-sm leading-relaxed max-w-sm">
-              Dedicated to crafting enduring living spaces across Lohgaon, Dhanori, Viman Nagar, and East Pune. Hand-built hardwood frames, silent hydraulic mechanisms, and custom-tailored aesthetics.
+            <p className="font-sans text-xs sm:text-sm text-zinc-400 mt-5 leading-relaxed font-normal max-w-sm">
+              Pune Airport Area's largest and most trusted modular furniture warehouse-showroom. Serving luxury comfort at factory-direct wholesale pricing across Pune.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
+            {/* Social Icons with Rounded Squares */}
+            <div className="flex items-center gap-3 mt-6">
               <a
-                href={BUSINESS_DATA.maps.directUrl}
+                href={BUSINESS_DATA.social?.instagram || 'https://instagram.com'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-brand-champagne hover:text-white transition-colors uppercase tracking-wider font-medium"
+                className="p-2.5 rounded-lg bg-white/5 hover:bg-brand-teak text-white/80 hover:text-white transition-all border border-white/10 hover:border-brand-champagne"
+                aria-label="Follow Veer Furniture Mall on Instagram"
               >
-                <span>Google Business Listing</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <Instagram className="w-4 h-4" />
               </a>
-              <span className="text-white/20">|</span>
-              <span className="text-xs text-zinc-400">
-                {BUSINESS_DATA.coordinates.formatted}
-              </span>
+
+              <a
+                href={BUSINESS_DATA.social?.facebook || 'https://facebook.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg bg-white/5 hover:bg-brand-teak text-white/80 hover:text-white transition-all border border-white/10 hover:border-brand-champagne"
+                aria-label="Follow Veer Furniture Mall on Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+
+              <a
+                href={`https://wa.me/${BUSINESS_DATA.contact.whatsappNumber}?text=${encodeURIComponent(
+                  BUSINESS_DATA.contact.whatsappPreFilledText
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg bg-white/5 hover:bg-emerald-600 text-white/80 hover:text-white transition-all border border-white/10 hover:border-brand-champagne"
+                aria-label="Inquire directly on WhatsApp"
+              >
+                <MessageSquare className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
-          {/* Col 3: Quick Navigation */}
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-brand-champagne font-semibold mb-5">
-              Explore
-            </h4>
-            <ul className="space-y-3">
-              {NAV_ITEMS.filter((i) => !i.isAction).map((item) => (
-                <li key={item.href}>
-                  <button
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-zinc-300 hover:text-brand-champagne transition-colors text-sm text-left flex items-center gap-1.5 group cursor-pointer"
-                  >
-                    <ArrowRight className="w-3 h-3 text-brand-champagne opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span>{item.label}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+          {/* Col 2 (Middle): Quick Links (lg:col-span-3) */}
+          <div className="lg:col-span-3 flex flex-col">
+            <h3 className="font-display text-xs font-bold uppercase tracking-widest text-brand-champagne border-b border-white/10 pb-2 mb-4">
+              QUICK LINKS
+            </h3>
+            <div className="flex flex-col gap-3 font-sans text-xs sm:text-sm">
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#home');
+                }}
+                className="text-zinc-400 hover:text-brand-champagne hover:underline transition-colors font-medium tracking-wide"
+              >
+                Home Showroom
+              </a>
+
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#about');
+                }}
+                className="text-zinc-400 hover:text-brand-champagne hover:underline transition-colors font-medium tracking-wide"
+              >
+                Heritage & About
+              </a>
+
+              <a
+                href="#collections"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#collections');
+                }}
+                className="text-zinc-400 hover:text-brand-champagne hover:underline transition-colors font-medium tracking-wide"
+              >
+                Furniture Categories
+              </a>
+
+              <a
+                href="#gallery"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#gallery');
+                }}
+                className="text-zinc-400 hover:text-brand-champagne hover:underline transition-colors font-medium tracking-wide"
+              >
+                Exhibition Gallery
+              </a>
+
+              <a
+                href="#reviews"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#reviews');
+                }}
+                className="text-zinc-400 hover:text-brand-champagne hover:underline transition-colors font-medium tracking-wide"
+              >
+                Customer Reviews
+              </a>
+
+              <a
+                href="#location"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#location');
+                }}
+                className="text-zinc-400 hover:text-brand-champagne hover:underline transition-colors font-medium tracking-wide"
+              >
+                Store Inquiries
+              </a>
+            </div>
           </div>
 
-          {/* Col 4: Collections Directory */}
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-brand-champagne font-semibold mb-5">
-              Collections
-            </h4>
-            <ul className="space-y-3">
-              {Array.from(new Set(COLLECTIONS_DATA.map((c) => c.category))).slice(0, 5).map((categoryName) => (
-                <li key={categoryName}>
-                  <button
-                    onClick={() => scrollToSection('#collections')}
-                    className="text-zinc-300 hover:text-brand-champagne transition-colors text-sm text-left line-clamp-1 cursor-pointer"
-                  >
-                    {categoryName}
-                  </button>
-                </li>
-              ))}
-              <li>
-                <button
-                  onClick={() => scrollToSection('#collections')}
-                  className="text-brand-champagne hover:underline text-xs tracking-wider uppercase mt-2 font-medium cursor-pointer"
-                >
-                  View All Categories &rarr;
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 5: Showroom Desk & Contact */}
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-brand-champagne font-semibold mb-5">
-              Lohgaon Showroom
-            </h4>
-            <div className="space-y-4 text-sm text-zinc-300">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-brand-champagne flex-shrink-0 mt-1" />
-                <span className="leading-snug">{BUSINESS_DATA.address.fullFormatted}</span>
+          {/* Col 3 (Right): Contact Coordinates (lg:col-span-5) */}
+          <div className="lg:col-span-5 flex flex-col">
+            <h3 className="font-display text-xs font-bold uppercase tracking-widest text-brand-champagne border-b border-white/10 pb-2 mb-4">
+              CONTACT COORDINATES
+            </h3>
+            <div className="flex flex-col gap-4 font-sans text-xs sm:text-sm">
+              {/* Address */}
+              <div className="flex gap-3 text-zinc-300">
+                <MapPin className="w-4 h-4 text-brand-champagne flex-shrink-0 mt-0.5" />
+                <span className="leading-relaxed">
+                  Veer Furniture Mall, Yojna Nagar, Lohegaon-Wagholi Road, Pune International Airport Area, Lohgaon, Pune, Maharashtra 411047
+                </span>
               </div>
 
-              <div className="flex items-center gap-2.5">
+              {/* Phone */}
+              <div className="flex gap-3 text-zinc-300 items-center">
                 <Phone className="w-4 h-4 text-brand-champagne flex-shrink-0" />
                 <a
                   href={BUSINESS_DATA.contact.phoneCallable}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-brand-champagne transition-colors font-medium"
                 >
                   {BUSINESS_DATA.contact.phoneDisplay}
                 </a>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <FaWhatsapp className="w-4 h-4 text-[#25D366] flex-shrink-0" />
+              {/* Email */}
+              <div className="flex gap-3 text-zinc-300 items-center">
+                <Mail className="w-4 h-4 text-brand-champagne flex-shrink-0" />
                 <a
-                  href={`https://wa.me/${BUSINESS_DATA.contact.whatsappNumber}?text=${encodeURIComponent(
-                    BUSINESS_DATA.contact.whatsappPreFilledText
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
+                  href={`mailto:${BUSINESS_DATA.contact.email}`}
+                  className="hover:text-brand-champagne transition-colors"
                 >
-                  WhatsApp Direct Line
+                  {BUSINESS_DATA.contact.email}
                 </a>
               </div>
 
-              <div className="flex items-start gap-2.5 pt-1">
-                <Clock className="w-4 h-4 text-brand-champagne flex-shrink-0 mt-0.5" />
-                <div>
-                  <span className="block font-medium text-white">{BUSINESS_DATA.hours.timing}</span>
-                  <span className="text-xs text-zinc-400">{BUSINESS_DATA.hours.days}</span>
-                </div>
+              {/* Timing */}
+              <div className="flex gap-3 text-zinc-300 items-center">
+                <Clock className="w-4 h-4 text-brand-champagne flex-shrink-0" />
+                <span>
+                  Showroom Open: {BUSINESS_DATA.hours.timing} (Open All Days)
+                </span>
               </div>
             </div>
           </div>
+
         </div>
 
-        {/* Bottom Bar: Copyright & Location Verification Note */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-400 gap-4">
-          <p>
-            &copy; {new Date().getFullYear()} Veer Furniture Mall — Lohgaon Branch, Pune. All rights reserved.
+        {/* Bottom Bar: Copyright & Made By Street Up with Hyperlink */}
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+          <p className="font-sans text-[11px] sm:text-xs text-white/50 font-normal">
+            &copy; {new Date().getFullYear()} Veer Furniture Mall. All Rights Reserved. | Lohgaon, Pune, Maharashtra
           </p>
-          <div className="flex items-center gap-4 text-[11px]">
-            <span>Branch Notice: Independent Lohgaon showroom representation</span>
-            <span>•</span>
+
+          <p className="font-sans text-[11px] sm:text-xs text-brand-champagne tracking-widest uppercase font-semibold flex items-center justify-center gap-1.5">
+            <span>MADE BY</span>
             <a
-              href={BUSINESS_DATA.maps.directionsUrl}
+              href="https://www.street-up.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-champagne hover:underline"
+              className="text-brand-champagne hover:text-white hover:underline transition-all font-bold"
             >
-              Get Directions
+              STREET UP
             </a>
-          </div>
+          </p>
         </div>
+
       </div>
     </footer>
   );
 };
-

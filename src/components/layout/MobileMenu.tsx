@@ -93,7 +93,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
           <div className="flex flex-col gap-2.5">
             <a
               href={BUSINESS_DATA.contact.phoneCallable}
-              className="flex items-center justify-center gap-2 w-full py-3 bg-brand-teak hover:bg-brand-teak/90 text-white text-xs uppercase tracking-widest font-medium transition-colors"
+              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-brand-teak hover:bg-brand-teak/90 text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-sm"
             >
               <Phone className="w-4 h-4" />
               <span>Call Showroom ({BUSINESS_DATA.contact.phoneDisplay})</span>
@@ -104,7 +104,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs uppercase tracking-widest font-semibold transition-colors"
+              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-sm"
             >
               <FaWhatsapp className="w-4 h-4 flex-shrink-0" />
               <span>Enquire on WhatsApp</span>

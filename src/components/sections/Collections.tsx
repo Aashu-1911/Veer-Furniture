@@ -56,17 +56,17 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar" role="tablist" aria-label="Collections Filter">
+        <div className="flex items-center gap-2.5 overflow-x-auto pb-3 mb-8 no-scrollbar" role="tablist" aria-label="Collections Filter">
           {categories.map((cat) => (
             <button
               key={cat}
               role="tab"
               aria-selected={selectedFilter === cat}
               onClick={() => setSelectedFilter(cat)}
-              className={`text-xs uppercase tracking-wider px-3.5 py-2 transition-all whitespace-nowrap cursor-pointer border ${
+              className={`text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-all whitespace-nowrap cursor-pointer border ${
                 selectedFilter === cat
-                  ? 'bg-brand-dark text-white border-brand-dark font-medium shadow-subtle'
-                  : 'bg-white text-brand-dark/70 border-brand-border hover:bg-brand-cream hover:text-brand-dark'
+                  ? 'bg-brand-dark text-white border-brand-dark font-semibold shadow-md'
+                  : 'bg-white text-brand-dark/70 border-brand-border hover:bg-brand-cream hover:border-brand-teak hover:text-brand-dark'
               }`}
             >
               {cat}
@@ -74,7 +74,7 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
           ))}
         </div>
 
-        {/* Short, Balanced Cards: 2-col on mobile, 3-col on desktop */}
+        {/* Chakan-Inspired Rounded Elevated Cards: 2-col on mobile, 3-col on desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
           {filteredItems.map((item) => {
             const whatsappLink = `https://wa.me/${BUSINESS_DATA.contact.whatsappNumber}?text=${encodeURIComponent(
@@ -84,24 +84,24 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
             return (
               <div
                 key={item.id}
-                className="group bg-white border border-brand-border hover:border-brand-teak/50 transition-all duration-300 hover:shadow-subtle flex flex-col justify-between overflow-hidden"
+                className="group bg-white rounded-2xl border border-brand-border/80 hover:border-brand-champagne/80 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(200,162,106,0.16)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden"
               >
-                {/* Image Wrap: ~135px on mobile, ~190-200px on desktop */}
+                {/* Image Wrap */}
                 <div className="relative h-36 sm:h-48 lg:h-52 w-full overflow-hidden bg-brand-charcoal">
                   <img
                     src={item.imageUrl}
                     alt={`${item.title} - ${item.subtitle}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
 
                   {/* Category Tag & Badge */}
-                  <div className="absolute top-2 left-2 flex items-center gap-1.5">
-                    <span className="bg-brand-dark/85 backdrop-blur-sm text-white text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium">
+                  <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+                    <span className="bg-brand-dark/85 backdrop-blur-md text-white text-[9px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-medium shadow-sm">
                       {item.category}
                     </span>
                     {item.accentBadge && (
-                      <span className="hidden sm:inline-flex bg-brand-champagne text-brand-dark text-[9px] uppercase tracking-wider font-semibold px-2 py-0.5 items-center gap-1">
+                      <span className="hidden sm:inline-flex bg-brand-champagne text-brand-dark text-[9px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full items-center gap-1 shadow-sm">
                         <Sparkles aria-hidden="true" className="w-2.5 h-2.5" />
                         {item.accentBadge}
                       </span>
@@ -109,8 +109,8 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                   </div>
                 </div>
 
-                {/* Content Area: ~90-100px */}
-                <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-2.5">
+                {/* Content Area */}
+                <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
                   <div>
                     <span className="text-[10px] text-brand-teak uppercase tracking-wider font-medium line-clamp-1">
                       {item.subtitle}
@@ -123,13 +123,13 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                     </p>
                   </div>
 
-                  {/* Concise Action: WhatsApp Enquiry */}
-                  <div className="pt-2 border-t border-brand-border/60 flex items-center justify-between">
+                  {/* Concise Action: WhatsApp Enquiry & Showroom (Rounded Pills) */}
+                  <div className="pt-2.5 border-t border-brand-border/60 flex items-center justify-between gap-2">
                     <a
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#25D366] hover:text-[#1da851] uppercase tracking-wider cursor-pointer transition-colors"
+                      className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white border border-emerald-200 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider cursor-pointer transition-all duration-300 shadow-sm"
                     >
                       <FaWhatsapp aria-hidden="true" className="w-3.5 h-3.5 flex-shrink-0" />
                       <span>Enquiry</span>
@@ -137,7 +137,7 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
 
                     <button
                       onClick={() => scrollToSection('#location')}
-                      className="text-[11px] text-brand-dark hover:text-brand-teak flex items-center gap-1 font-medium cursor-pointer"
+                      className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brand-cream/60 hover:bg-brand-dark hover:text-white text-brand-dark border border-brand-border text-[10px] sm:text-[11px] font-medium cursor-pointer transition-all duration-300"
                     >
                       <span>Showroom</span>
                       <ArrowRight aria-hidden="true" className="w-3 h-3" />
@@ -149,8 +149,8 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
           })}
         </div>
 
-        {/* Compact Flat Combo Box */}
-        <div className="mt-10 sm:mt-12 bg-brand-dark text-white p-6 sm:p-8 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        {/* Compact Flat Combo Box (Rounded-2xl with Rounded-full CTA) */}
+        <div className="mt-10 sm:mt-12 bg-brand-dark text-white p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="text-left space-y-1">
             <span className="text-[10px] uppercase tracking-wider text-brand-champagne font-semibold">
               Complete Home Packages
@@ -169,7 +169,7 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-brand-champagne text-brand-dark font-semibold text-xs uppercase tracking-wider hover:bg-brand-champagneLight transition-colors whitespace-nowrap self-stretch sm:self-auto"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-champagne text-brand-dark font-semibold text-xs uppercase tracking-wider hover:bg-brand-champagneLight transition-colors whitespace-nowrap self-stretch sm:self-auto shadow-md"
           >
             <FaWhatsapp aria-hidden="true" className="w-4 h-4 flex-shrink-0" />
             <span>Get Package Quotation</span>

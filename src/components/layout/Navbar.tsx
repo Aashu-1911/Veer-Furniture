@@ -34,8 +34,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-brand-surface/98 backdrop-blur-md border-b border-brand-border/90 shadow-subtle py-2.5 sm:py-3'
-            : 'bg-brand-dark/95 backdrop-blur-md border-b border-white/10 py-3 sm:py-3.5 shadow-md'
+            ? 'bg-brand-dark/85 backdrop-blur-md border-b border-white/10 shadow-lg py-3'
+            : 'bg-transparent border-b border-white/10 py-4 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,25 +57,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               />
 
               <div className="flex flex-col text-left justify-center leading-none">
-                <span
-                  className={`font-display text-lg sm:text-xl font-bold tracking-wider uppercase leading-tight transition-colors ${
-                    isScrolled ? 'text-brand-dark group-hover:text-brand-teak' : 'text-white'
-                  }`}
-                >
+                <span className="font-display text-lg sm:text-xl font-bold tracking-wider uppercase leading-tight text-white transition-colors">
                   VEER
                 </span>
-                <span
-                  className={`text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase mt-0.5 transition-colors whitespace-nowrap ${
-                    isScrolled ? 'text-brand-teak' : 'text-brand-champagne'
-                  }`}
-                >
+                <span className="text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase mt-0.5 text-brand-champagne transition-colors whitespace-nowrap">
                   FURNITURE MALL
                 </span>
-                <span
-                  className={`text-[8px] tracking-wider uppercase font-medium mt-0.5 transition-colors whitespace-nowrap ${
-                    isScrolled ? 'text-brand-muted' : 'text-zinc-400'
-                  }`}
-                >
+                <span className="text-[8px] tracking-wider uppercase font-medium mt-0.5 text-zinc-300 transition-colors whitespace-nowrap">
                   PUNE AIRPORT AREA
                 </span>
               </div>
@@ -91,14 +79,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   <button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className={`text-xs uppercase tracking-wider font-medium transition-all py-1 border-b cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-champagne whitespace-nowrap ${
+                    className={`text-xs uppercase tracking-wider font-medium transition-all py-1 border-b-2 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-champagne whitespace-nowrap ${
                       isActive
-                        ? isScrolled
-                          ? 'border-brand-teak text-brand-teak font-semibold'
-                          : 'border-brand-champagne text-brand-champagne font-semibold'
-                        : isScrolled
-                        ? 'border-transparent text-brand-dark/80 hover:text-brand-teak hover:border-brand-teak/40'
-                        : 'border-transparent text-white/85 hover:text-brand-champagne hover:border-brand-champagne/40'
+                        ? 'border-brand-champagne text-brand-champagne font-semibold'
+                        : 'border-transparent text-white/80 hover:text-brand-champagne hover:border-brand-champagne/40'
                     }`}
                   >
                     {item.label}
@@ -107,17 +91,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               })}
             </nav>
 
-            {/* Right Action buttons (Desktop) — Visually Identical Dimensions (185px x 44px) */}
-            <div className="hidden md:flex items-center space-x-2.5 flex-shrink-0">
+            {/* Right Action buttons (Desktop) — Rounded Pill Dimensions (185px x 44px) */}
+            <div className="hidden md:flex items-center space-x-3 flex-shrink-0">
               {/* Phone Button */}
               <a
                 href={BUSINESS_DATA.contact.phoneCallable}
                 aria-label={`Call Showroom at ${BUSINESS_DATA.contact.phoneDisplay}`}
-                className={`w-[165px] lg:w-[185px] h-[44px] flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all border select-none whitespace-nowrap ${
-                  isScrolled
-                    ? 'border-brand-border bg-white text-brand-dark hover:bg-brand-cream hover:border-brand-teak shadow-subtle'
-                    : 'border-white/25 bg-white/5 text-white hover:bg-white/10 hover:border-brand-champagne'
-                }`}
+                className="w-[165px] lg:w-[185px] h-[44px] rounded-full flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all border border-white/25 bg-black/30 hover:bg-white/15 hover:border-brand-champagne text-white backdrop-blur-sm select-none whitespace-nowrap shadow-sm"
               >
                 <Phone className="w-3.5 h-3.5 text-brand-champagne flex-shrink-0" />
                 <span>{BUSINESS_DATA.contact.phoneDisplay}</span>
@@ -129,27 +109,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Veer Furniture Mall Lohgaon on Google Maps"
-                className={`w-[165px] lg:w-[185px] h-[44px] flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer whitespace-nowrap border ${
-                  isScrolled
-                    ? 'border-brand-dark bg-brand-dark text-white hover:bg-brand-teak hover:border-brand-teak shadow-subtle'
-                    : 'border-brand-champagne bg-brand-champagne text-brand-dark hover:bg-brand-champagneLight hover:border-brand-champagneLight shadow-subtle'
-                }`}
+                className="w-[165px] lg:w-[185px] h-[44px] rounded-full flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer whitespace-nowrap border border-brand-champagne bg-brand-champagne text-brand-dark hover:bg-brand-champagneLight hover:border-brand-champagneLight shadow-subtle"
               >
                 <Navigation className="w-3.5 h-3.5 flex-shrink-0" />
                 <span>VISIT SHOWROOM</span>
               </a>
             </div>
 
-            {/* Mobile Menu Hamburger (Only logo and menu button on mobile header) */}
+            {/* Mobile Menu Hamburger (Rounded) */}
             <div className="flex items-center md:hidden gap-1.5 flex-shrink-0">
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 aria-label="Open Navigation Menu"
-                className={`p-2 border transition-colors ${
-                  isScrolled
-                    ? 'border-brand-border text-brand-dark hover:bg-brand-cream'
-                    : 'border-white/20 text-white bg-white/5 hover:bg-white/10'
-                }`}
+                className="p-2.5 rounded-full border border-white/20 text-white bg-black/30 backdrop-blur-sm hover:bg-white/15 transition-colors"
               >
                 <Menu className="w-5 h-5" />
               </button>

@@ -52,18 +52,18 @@ export const Gallery: React.FC = () => {
           </div>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar" role="tablist" aria-label="Gallery Filters">
+        {/* Filter Pills (Rounded) */}
+        <div className="flex items-center gap-2.5 overflow-x-auto pb-3 mb-8 no-scrollbar" role="tablist" aria-label="Gallery Filters">
           {categories.map((cat) => (
             <button
               key={cat}
               role="tab"
               aria-selected={activeCategory === cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs uppercase tracking-wider px-3.5 py-1.5 transition-all whitespace-nowrap cursor-pointer border ${
+              className={`text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-all whitespace-nowrap cursor-pointer border ${
                 activeCategory === cat
-                  ? 'bg-brand-dark text-white border-brand-dark font-medium shadow-subtle'
-                  : 'bg-white text-brand-dark/70 border-brand-border hover:bg-brand-cream hover:text-brand-dark'
+                  ? 'bg-brand-dark text-white border-brand-dark font-semibold shadow-md'
+                  : 'bg-white text-brand-dark/70 border-brand-border hover:bg-brand-cream hover:border-brand-teak hover:text-brand-dark'
               }`}
             >
               {cat}
@@ -91,7 +91,7 @@ export const Gallery: React.FC = () => {
                     openLightbox(item);
                   }
                 }}
-                className={`group relative overflow-hidden bg-brand-charcoal cursor-pointer border border-brand-border shadow-subtle transition-all duration-300 hover:shadow-subtle focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:outline-none ${spanClass}`}
+                className={`group relative overflow-hidden bg-brand-charcoal cursor-pointer rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_35px_rgba(200,162,106,0.16)] hover:-translate-y-1 transition-all duration-500 focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:outline-none ${spanClass}`}
               >
                 {/* Image Container: balanced ~140px mobile, ~240px desktop */}
                 <div className="relative overflow-hidden h-36 sm:h-56 lg:h-64 w-full">
@@ -113,8 +113,8 @@ export const Gallery: React.FC = () => {
                     </h3>
                   </div>
 
-                  {/* Top-Right Category Pill */}
-                  <div className="hidden sm:block absolute top-2.5 right-2.5 bg-brand-dark/75 backdrop-blur-sm text-white text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium group-hover:opacity-0 transition-opacity">
+                  {/* Top-Right Category Pill (Rounded-full) */}
+                  <div className="hidden sm:block absolute top-2.5 right-2.5 bg-brand-dark/85 backdrop-blur-md text-white text-[9px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-medium shadow-sm group-hover:opacity-0 transition-opacity">
                     {item.category}
                   </div>
                 </div>

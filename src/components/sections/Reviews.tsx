@@ -21,13 +21,13 @@ export const Reviews: React.FC = () => {
             className="mb-0 max-w-2xl"
           />
 
-          {/* Factual Verified Google Rating Pill */}
+          {/* Factual Verified Google Rating Pill (Rounded-full) */}
           <a
             href={BUSINESS_DATA.maps.directUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View verified Google Maps reviews for Veer Furniture Mall Lohgaon"
-            className="group flex items-center gap-3 bg-white px-4 py-2.5 border border-brand-border shadow-subtle hover:border-brand-teak transition-all self-start md:self-end"
+            className="group flex items-center gap-3 bg-white px-5 py-2.5 rounded-full border border-brand-border/80 shadow-sm hover:border-brand-champagne hover:shadow-md transition-all self-start md:self-end"
           >
             <div className="flex items-center gap-1 text-amber-500" aria-label="5 stars">
               {[...Array(5)].map((_, i) => (
@@ -58,7 +58,7 @@ export const Reviews: React.FC = () => {
           {marqueeReviews.map((rev, idx) => (
             <div
               key={`${rev.id}-${idx}`}
-              className="w-[300px] sm:w-[350px] md:w-[380px] flex-shrink-0 bg-white p-5 sm:p-6 border border-brand-border hover:border-brand-teak/50 transition-all duration-300 flex flex-col justify-between space-y-3.5 shadow-subtle hover:shadow-elevated select-none"
+              className="w-[300px] sm:w-[350px] md:w-[380px] flex-shrink-0 bg-white p-5 sm:p-6 rounded-2xl border border-brand-border/80 hover:border-brand-champagne/80 transition-all duration-300 flex flex-col justify-between space-y-3.5 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_35px_rgba(200,162,106,0.14)] hover:-translate-y-1 select-none"
             >
               {/* Stars & Verified Badge */}
               <div className="flex items-center justify-between">
@@ -68,7 +68,7 @@ export const Reviews: React.FC = () => {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-1 text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 border border-emerald-200 font-medium">
+                <div className="flex items-center gap-1 text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-medium">
                   <ShieldCheck aria-hidden="true" className="w-3 h-3" />
                   <span>Verified Visit</span>
                 </div>
@@ -112,7 +112,7 @@ export const Reviews: React.FC = () => {
             href={BUSINESS_DATA.maps.directUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs uppercase tracking-wider font-semibold text-brand-dark hover:text-brand-teak inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-brand-border hover:bg-brand-cream transition-colors shadow-subtle cursor-pointer"
+            className="text-xs uppercase tracking-wider font-semibold text-brand-dark hover:text-brand-teak inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white border border-brand-border/80 hover:bg-brand-cream hover:border-brand-champagne transition-all shadow-sm cursor-pointer"
           >
             <span>View All Reviews on Google Maps</span>
             <ExternalLink aria-hidden="true" className="w-3.5 h-3.5 text-brand-teak" />

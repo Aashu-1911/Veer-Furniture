@@ -40,6 +40,11 @@ export interface BusinessDetails {
     googleReviewCount: number;
     highlightPill: string;
   };
+  social?: {
+    instagram?: string;
+    facebook?: string;
+    youtube?: string;
+  };
   categoriesOffered: string[];
 }
 

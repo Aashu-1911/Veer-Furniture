@@ -24,7 +24,7 @@ export const BUSINESS_DATA: BusinessDetails = {
     phoneCallable: 'tel:+919637742929',
     whatsappNumber: '919637742929',
     whatsappPreFilledText: 'Hello Veer Furniture Mall Lohgaon team, I am interested in exploring furniture collections for my home in Pune.',
-    email: 'contact@veerfurnituremall.com',
+    email: 'veerfurnituremall0@gmail.com',
   },
   hours: {
     days: 'Monday – Sunday (7 Days Open)',
@@ -41,6 +41,11 @@ export const BUSINESS_DATA: BusinessDetails = {
     googleRating: 4.9,
     googleReviewCount: 140,
     highlightPill: 'Rated 4.9 ★ on Google Maps',
+  },
+  social: {
+    instagram: 'https://instagram.com/veerfurnituremall_chakan',
+    facebook: 'https://facebook.com/veerfurnituremall',
+    youtube: 'https://youtube.com/@veerfurnituremall',
   },
   categoriesOffered: [
     'Living Room & Sectional Sofas',

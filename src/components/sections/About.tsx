@@ -45,7 +45,7 @@ export const About: React.FC = () => {
           
           {/* Left Column: Clean Single Showroom Photograph (5 cols) */}
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative overflow-hidden border border-brand-border shadow-subtle bg-white">
+            <div className="relative overflow-hidden rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.06)] bg-white">
               <img
                 src="/assets/images/img-14.png"
                 alt="Veer Furniture Mall Lohgaon showroom storefront and entrance facade"
@@ -74,14 +74,14 @@ export const About: React.FC = () => {
                 return (
                   <div key={idx} className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <div className="p-1.5 bg-brand-cream border border-brand-border text-brand-teak">
+                      <div className="p-2 bg-brand-cream rounded-xl border border-brand-border text-brand-teak shadow-sm">
                         <IconComponent aria-hidden="true" className="w-3.5 h-3.5" />
                       </div>
                       <h4 className="font-display text-sm font-semibold text-brand-dark">
                         {item.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-brand-muted leading-relaxed pl-7">
+                    <p className="text-xs text-brand-muted leading-relaxed pl-8">
                       {item.description}
                     </p>
                   </div>

@@ -65,7 +65,7 @@ export const Contact: React.FC = () => {
           {/* Left Column: Verified Location, Phone & Quick Desks (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
             
-            <div className="bg-white p-6 sm:p-7 border border-brand-border shadow-subtle space-y-5">
+            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)] space-y-5">
               
               <div className="border-b border-brand-border/70 pb-4">
                 <span className="text-[10px] uppercase tracking-wider text-brand-teak font-semibold block mb-0.5">
@@ -82,7 +82,7 @@ export const Contact: React.FC = () => {
               {/* Showroom Details */}
               <div className="space-y-3.5 text-xs sm:text-sm">
                 <div className="flex items-start gap-3">
-                  <div className="p-1.5 bg-brand-cream border border-brand-border text-brand-teak flex-shrink-0 mt-0.5">
+                  <div className="p-2 bg-brand-cream rounded-xl border border-brand-border text-brand-teak flex-shrink-0 mt-0.5 shadow-sm">
                     <MapPin aria-hidden="true" className="w-3.5 h-3.5" />
                   </div>
                   <div>
@@ -97,7 +97,7 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-1.5 bg-brand-cream border border-brand-border text-brand-teak flex-shrink-0 mt-0.5">
+                  <div className="p-2 bg-brand-cream rounded-xl border border-brand-border text-brand-teak flex-shrink-0 mt-0.5 shadow-sm">
                     <Clock aria-hidden="true" className="w-3.5 h-3.5" />
                   </div>
                   <div>
@@ -109,7 +109,7 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-1.5 bg-brand-cream border border-brand-border text-brand-teak flex-shrink-0 mt-0.5">
+                  <div className="p-2 bg-brand-cream rounded-xl border border-brand-border text-brand-teak flex-shrink-0 mt-0.5 shadow-sm">
                     <Phone aria-hidden="true" className="w-3.5 h-3.5" />
                   </div>
                   <div>
@@ -131,7 +131,7 @@ export const Contact: React.FC = () => {
                   size="sm"
                   asLink
                   href={BUSINESS_DATA.contact.phoneCallable}
-                  className="flex-1"
+                  className="flex-1 rounded-full shadow-sm"
                 >
                   <Phone aria-hidden="true" className="w-3.5 h-3.5 mr-1.5" />
                   <span>Call Now</span>
@@ -144,7 +144,7 @@ export const Contact: React.FC = () => {
                   href={BUSINESS_DATA.maps.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1"
+                  className="flex-1 rounded-full shadow-sm"
                 >
                   <Navigation aria-hidden="true" className="w-3.5 h-3.5 mr-1.5" />
                   <span>Directions</span>
@@ -153,10 +153,10 @@ export const Contact: React.FC = () => {
 
             </div>
 
-            {/* Direct WhatsApp Callout */}
-            <div className="bg-[#25D366]/10 border border-[#25D366]/30 p-4 flex items-center justify-between gap-3">
+            {/* Direct WhatsApp Callout (Rounded-2xl) */}
+            <div className="bg-[#25D366]/10 border border-[#25D366]/30 p-4 rounded-2xl flex items-center justify-between gap-3 shadow-sm">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-[#25D366] text-white flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center flex-shrink-0 shadow-md">
                   <FaWhatsapp aria-hidden="true" className="w-5 h-5" />
                 </div>
                 <div>
@@ -175,7 +175,7 @@ export const Contact: React.FC = () => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-semibold uppercase tracking-wider transition-colors flex-shrink-0"
+                className="px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-semibold uppercase tracking-wider transition-colors flex-shrink-0 shadow-sm"
               >
                 Chat
               </a>
@@ -187,7 +187,7 @@ export const Contact: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Interactive Embedded Google Map for Lohgaon */}
-            <div className="bg-white border border-brand-border shadow-subtle overflow-hidden">
+            <div className="bg-white rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)] overflow-hidden">
               <div className="p-3 bg-brand-surface border-b border-brand-border flex items-center justify-between text-xs">
                 <div className="flex items-center gap-1.5 font-semibold text-brand-dark">
                   <MapPin aria-hidden="true" className="w-3.5 h-3.5 text-brand-teak" />
@@ -220,7 +220,7 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Compact Quote & Blueprint Inquiry Form */}
-            <div className="bg-white p-6 sm:p-7 border border-brand-border shadow-subtle">
+            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <div className="mb-4">
                 <h4 className="font-display text-lg font-medium text-brand-dark">
                   Request Custom Quote or Catalog
@@ -233,7 +233,7 @@ export const Contact: React.FC = () => {
               {formSubmitted ? (
                 <div
                   aria-live="polite"
-                  className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2 animate-fade-in"
+                  className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2 animate-fade-in"
                 >
                   <div className="flex items-center gap-2 font-semibold text-xs sm:text-sm">
                     <CheckCircle aria-hidden="true" className="w-4 h-4 text-emerald-600" />
@@ -254,7 +254,7 @@ export const Contact: React.FC = () => {
                   </a>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-3" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-3.5" noValidate>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label htmlFor="contact-name" className="block text-[11px] uppercase tracking-wider font-medium text-brand-dark mb-1">
@@ -270,7 +270,7 @@ export const Contact: React.FC = () => {
                         placeholder="e.g. Anand Shinde"
                         aria-invalid={!!formErrors.name}
                         aria-describedby={formErrors.name ? "name-error" : undefined}
-                        className={`w-full px-3 py-2 text-xs sm:text-sm border bg-brand-surface focus:outline-none focus:ring-1 focus:ring-brand-teak ${
+                        className={`w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border bg-brand-surface focus:outline-none focus:ring-2 focus:ring-brand-champagne/40 ${
                           formErrors.name ? 'border-red-500' : 'border-brand-border'
                         }`}
                       />
@@ -297,7 +297,7 @@ export const Contact: React.FC = () => {
                         placeholder="e.g. 9876543210"
                         aria-invalid={!!formErrors.phone}
                         aria-describedby={formErrors.phone ? "phone-error" : undefined}
-                        className={`w-full px-3 py-2 text-xs sm:text-sm border bg-brand-surface focus:outline-none focus:ring-1 focus:ring-brand-teak ${
+                        className={`w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border bg-brand-surface focus:outline-none focus:ring-2 focus:ring-brand-champagne/40 ${
                           formErrors.phone ? 'border-red-500' : 'border-brand-border'
                         }`}
                       />
@@ -319,7 +319,7 @@ export const Contact: React.FC = () => {
                       name="requirement"
                       value={formData.requirement}
                       onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                      className="w-full px-3 py-2 text-xs sm:text-sm border border-brand-border bg-brand-surface focus:outline-none focus:ring-1 focus:ring-brand-teak cursor-pointer"
+                      className="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border border-brand-border bg-brand-surface focus:outline-none focus:ring-2 focus:ring-brand-champagne/40 cursor-pointer"
                     >
                       <option value="Living Room Sofa">Living Room Sectional / Sofa Set</option>
                       <option value="Master Bedroom Bed">Luxury King/Queen Hydraulic Bed</option>
@@ -341,12 +341,12 @@ export const Contact: React.FC = () => {
                       value={formData.dimensionsNote}
                       onChange={(e) => setFormData({ ...formData, dimensionsNote: e.target.value })}
                       placeholder="e.g. Need an L-shaped sofa in beige velvet, living room wall is 11ft..."
-                      className="w-full px-3 py-2 text-xs sm:text-sm border border-brand-border bg-brand-surface focus:outline-none focus:ring-1 focus:ring-brand-teak"
+                      className="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border border-brand-border bg-brand-surface focus:outline-none focus:ring-2 focus:ring-brand-champagne/40"
                     />
                   </div>
 
                   <div className="pt-1 flex items-center justify-between">
-                    <Button type="submit" variant="primary" size="sm" className="w-full sm:w-auto">
+                    <Button type="submit" variant="primary" size="sm" className="w-full sm:w-auto rounded-full shadow-sm">
                       <Send aria-hidden="true" className="w-3.5 h-3.5 mr-1.5" />
                       <span>Send WhatsApp Inquiry</span>
                     </Button>

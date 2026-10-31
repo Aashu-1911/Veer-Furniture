@@ -50,8 +50,8 @@ export const Hero: React.FC = () => {
         {/* Editorial Text Composition */}
         <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6 text-left py-6 sm:py-10 lg:py-16">
           
-          {/* Location Eyebrow */}
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-champagne font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+          {/* Location Eyebrow (Rounded Pill) */}
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-champagne font-medium px-3.5 py-1.5 rounded-full bg-black/35 backdrop-blur-sm border border-brand-champagne/30 drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
             <span className="w-2 h-2 rounded-full bg-brand-champagne animate-pulse" />
             <span>Lohgaon Showroom · Pune Airport Area</span>
           </div>

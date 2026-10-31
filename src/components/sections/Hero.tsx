@@ -1,108 +1,121 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ArrowDownRight, MapPin } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { BUSINESS_DATA } from '../../data/business';
 import { scrollToSection } from '../../lib/utils';
 
 export const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay may be restricted in strict battery-saver modes; poster serves as fallback
+      });
+    }
+  }, []);
+
   return (
     <section
       id="home"
-      className="relative bg-brand-dark text-white overflow-hidden pt-28 pb-12 sm:pt-36 sm:pb-16 lg:py-24 scroll-mt-20 border-b border-white/10"
+      className="relative bg-brand-dark text-white overflow-hidden pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-36 lg:pb-20 scroll-mt-20 border-b border-white/10 min-h-[580px] lg:min-h-[640px] flex flex-col justify-between"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background Video with Luxury Editorial Overlay */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/assets/videos/hero-video-poster.jpg"
+          className="w-full h-full object-cover object-center pointer-events-none"
+          aria-hidden="true"
+        >
+          <source src="/assets/videos/veer-furniture-hero-10s.mp4" type="video/mp4" />
+        </video>
+
+        {/* Balanced video visibility overlay:
+            Light balanced tint so the showroom video is bright, vivid, and clearly visible,
+            with a soft localized gradient on the text side and drop-shadows for crisp legibility.
+        */}
+        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent w-full md:w-3/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-transparent to-black/35" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
         
-        {/* Main 2-Column Clean Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Editorial Text Composition */}
+        <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6 text-left py-6 sm:py-10 lg:py-16">
           
-          {/* LEFT: Eyebrow, Heading, Short Description, 2 CTAs */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
-            
-            {/* Location Eyebrow */}
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-champagne font-medium">
-              <span className="w-2 h-2 rounded-full bg-brand-champagne animate-pulse" />
-              <span>Lohgaon Showroom · Pune Airport Area</span>
-            </div>
-
-            {/* Elegant Display Heading */}
-            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-[1.12]">
-              Furniture That Makes a House Feel Like Yours.
-            </h1>
-
-            {/* Short Supporting Description */}
-            <p className="font-sans text-sm sm:text-base lg:text-lg text-zinc-300 font-light max-w-xl leading-relaxed">
-              Direct showroom living, bedroom, and dining furniture crafted for modern Pune homes.
-            </p>
-
-            {/* Two Primary CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
-              <Button
-                variant="champagne"
-                size="md"
-                onClick={() => scrollToSection('#collections')}
-                className="group"
-              >
-                <span>Explore Collections</span>
-                <ArrowDownRight aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
-              </Button>
-
-              <Button
-                variant="outline"
-                size="md"
-                onClick={() => scrollToSection('#location')}
-                className="text-white border-white/30 hover:border-white hover:bg-white/10"
-              >
-                <MapPin aria-hidden="true" className="w-4 h-4 mr-2 text-brand-champagne" />
-                <span>Visit Showroom</span>
-              </Button>
-            </div>
-
+          {/* Location Eyebrow */}
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-champagne font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+            <span className="w-2 h-2 rounded-full bg-brand-champagne animate-pulse" />
+            <span>Lohgaon Showroom · Pune Airport Area</span>
           </div>
 
-          {/* RIGHT: ONE Large Premium Furniture Photograph with subtle minimal label */}
-          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div className="relative overflow-hidden border border-white/15 shadow-architectural bg-brand-charcoal">
-              <img
-                src="/assets/images/img-1.png"
-                alt="Living room sofa set display at Veer Furniture Mall Lohgaon"
-                className="w-full h-64 sm:h-88 lg:h-[400px] object-cover object-center transition-transform duration-700 hover:scale-105"
-                loading="eager"
-              />
-              
-              {/* Small, Unobtrusive Image Tag */}
-              <div className="absolute bottom-3 right-3 bg-brand-dark/85 backdrop-blur-sm px-3 py-1 border border-white/10 text-[10px] tracking-wider uppercase text-zinc-300">
-                Lohgaon Showroom Display
-              </div>
-            </div>
+          {/* Elegant Display Heading */}
+          <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-[1.12] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            Furniture That Makes a House Feel Like Yours.
+          </h1>
+
+          {/* Short Supporting Description */}
+          <p className="font-sans text-sm sm:text-base lg:text-lg text-zinc-100 font-light max-w-xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            Direct showroom living, bedroom, and dining furniture crafted for modern Pune homes.
+          </p>
+
+          {/* Two Primary CTAs */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <Button
+              variant="champagne"
+              size="md"
+              onClick={() => scrollToSection('#collections')}
+              className="group shadow-architectural"
+            >
+              <span>Explore Collections</span>
+              <ArrowDownRight aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
+            </Button>
+
+            <Button
+              variant="outline"
+              size="md"
+              onClick={() => scrollToSection('#location')}
+              className="text-white border-white/50 hover:border-white bg-black/30 hover:bg-white/15 backdrop-blur-sm shadow-architectural"
+            >
+              <MapPin aria-hidden="true" className="w-4 h-4 mr-2 text-brand-champagne" />
+              <span>Visit Showroom</span>
+            </Button>
           </div>
 
         </div>
 
         {/* BELOW HERO: Compact, Single-Row Verified Trust Information Strip */}
-        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-white/10">
-          <div className="flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm text-zinc-300 font-normal">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20">
+          <div className="flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm text-zinc-100 font-normal drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
             <div className="flex items-center gap-2">
               <span className="text-brand-champagne font-semibold text-base font-display">4.9 ★</span>
               <span>Verified Google Maps Rating</span>
             </div>
 
-            <div className="hidden md:inline-block w-1 h-1 rounded-full bg-white/30" />
+            <div className="hidden md:inline-block w-1 h-1 rounded-full bg-white/40" />
 
             <div className="flex items-center gap-2">
               <span className="text-white font-semibold font-display">Wholesale</span>
               <span>Direct Factory Showroom Rates</span>
             </div>
 
-            <div className="hidden md:inline-block w-1 h-1 rounded-full bg-white/30" />
+            <div className="hidden md:inline-block w-1 h-1 rounded-full bg-white/40" />
 
             <div className="flex items-center gap-2">
               <span className="text-brand-champagne font-semibold">Open Daily:</span>
               <span>{BUSINESS_DATA.hours.timing} (7 Days)</span>
             </div>
 
-            <div className="hidden lg:inline-block w-1 h-1 rounded-full bg-white/30" />
+            <div className="hidden lg:inline-block w-1 h-1 rounded-full bg-white/40" />
 
-            <div className="flex items-center gap-1.5 text-zinc-400 text-xs">
+            <div className="flex items-center gap-1.5 text-zinc-200 text-xs">
               <MapPin aria-hidden="true" className="w-3.5 h-3.5 text-brand-champagne" />
               <span>Yojna Nagar, Lohegaon-Wagholi Road</span>
             </div>

@@ -1,0 +1,57 @@
+import React, { useState } from 'react';
+import { Navbar } from './components/layout/Navbar';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
+import { Collections } from './components/sections/Collections';
+import { Gallery } from './components/sections/Gallery';
+import { Reviews } from './components/sections/Reviews';
+import { Contact } from './components/sections/Contact';
+import { Footer } from './components/layout/Footer';
+import { Preloader } from './components/layout/Preloader';
+import { FloatingWhatsApp } from './components/ui/FloatingWhatsApp';
+import { BackToTop } from './components/ui/BackToTop';
+import { useActiveSection } from './hooks/useActiveSection';
+
+export const App: React.FC = () => {
+  const [isPreloaderDone, setIsPreloaderDone] = useState(false);
+  
+  const sectionIds = ['home', 'about', 'collections', 'gallery', 'reviews', 'contact'];
+  const activeSection = useActiveSection(sectionIds, 120);
+
+  return (
+    <div className="min-h-screen bg-brand-surface text-brand-dark flex flex-col font-sans selection:bg-brand-champagne selection:text-brand-dark">
+      {/* Skip to Main Content Link for Keyboard / Screen Reader Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-brand-dark focus:text-white focus:ring-2 focus:ring-brand-champagne"
+      >
+        Skip to main content
+      </a>
+
+      {/* Brand Preloader */}
+      {!isPreloaderDone && (
+        <Preloader onComplete={() => setIsPreloaderDone(true)} />
+      )}
+
+      {/* Main App Layout */}
+      <Navbar activeSection={activeSection} />
+
+      <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
+        <Hero />
+        <About />
+        <Collections />
+        <Gallery />
+        <Reviews />
+        <Contact />
+      </main>
+
+      <Footer />
+
+      {/* Interactive Utilities */}
+      <FloatingWhatsApp />
+      <BackToTop />
+    </div>
+  );
+};
+
+export default App;

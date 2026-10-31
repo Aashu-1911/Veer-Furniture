@@ -1,0 +1,77 @@
+import { GalleryItem } from '../types';
+
+export const GALLERY_DATA: GalleryItem[] = [
+  {
+    id: 'gal-1',
+    title: 'The Grand Living Atelier',
+    category: 'Living Room',
+    description: 'Generous multi-seater curved sectional in oatmeal weave with architectural low profile.',
+    imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'wide',
+  },
+  {
+    id: 'gal-2',
+    title: 'Fluted Velvet Statement Sofa',
+    category: 'Living Room',
+    description: 'Deep forest velvet tailored sofa featuring channel tufting and high-resilience core.',
+    imageUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'portrait',
+  },
+  {
+    id: 'gal-3',
+    title: 'Master Bedroom Suite with Ambient Warmth',
+    category: 'Bedroom',
+    description: 'Solid hardwood platform bed with textured woven textiles and integrated floating side units.',
+    imageUrl: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'landscape',
+  },
+  {
+    id: 'gal-4',
+    title: 'Modern Japandi Rest Sanctuary',
+    category: 'Bedroom',
+    description: 'Low-slung solid timber headboard with tactile bouclé bench and linen drapery.',
+    imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'square',
+  },
+  {
+    id: 'gal-5',
+    title: 'Integrated Wardrobe & Dressing Suite',
+    category: 'Custom Interiors',
+    description: 'Floor-to-ceiling smoked paneling, hidden jewelry drawers, and backlit wardrobe niches.',
+    imageUrl: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'portrait',
+  },
+  {
+    id: 'gal-6',
+    title: 'Solid Teak & Marble Gathering Table',
+    category: 'Dining',
+    description: 'Sculptural stone slab dining table setting with ergonomic oak frame dining chairs.',
+    imageUrl: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'landscape',
+  },
+  {
+    id: 'gal-7',
+    title: 'Lohgaon Showroom Showcase Experience',
+    category: 'Showroom Floor',
+    description: 'Walk through expansive living displays, feel genuine fabric swatches, and test hydraulic beds in person.',
+    imageUrl: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'wide',
+  },
+  {
+    id: 'gal-8',
+    title: 'Minimalist Media & Credenza Composition',
+    category: 'Living Room',
+    description: 'Custom fluted wall console with concealed cabling and recessed display niches.',
+    imageUrl: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'square',
+  },
+  {
+    id: 'gal-9',
+    title: 'Modern Villa Dining & Social Space',
+    category: 'Dining',
+    description: 'Expansive open-concept dining arrangement engineered for family celebrations and dinner parties.',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    aspectRatio: 'landscape',
+  },
+];
+

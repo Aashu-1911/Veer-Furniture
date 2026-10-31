@@ -38,17 +38,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             : 'bg-transparent py-3 sm:py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4 lg:gap-8">
             
-            {/* Brand Logo & Identification (Enlarged) */}
+            {/* Brand Logo & Identification (Enlarged with generous right margin) */}
             <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className="group flex items-center gap-3 sm:gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne cursor-pointer select-none flex-shrink-0"
+              className="group flex items-center gap-3 sm:gap-4 mr-6 lg:mr-12 xl:mr-16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne cursor-pointer select-none flex-shrink-0"
             >
               <img
                 src={logoImg}
@@ -66,8 +66,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               </div>
             </a>
 
-            {/* Desktop Navigation Links (No underline bar) */}
-            <nav className="hidden lg:flex items-center space-x-5 xl:space-x-6">
+            {/* Desktop Navigation Links (Centered with spacious gap from logo) */}
+            <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 mx-auto">
               {navLinks.map((item) => {
                 const sectionId = item.href.replace('#', '');
                 const isActive = activeSection === sectionId;

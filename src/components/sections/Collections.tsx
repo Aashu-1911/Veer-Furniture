@@ -123,21 +123,21 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                     </p>
                   </div>
 
-                  {/* Concise Action: WhatsApp Enquiry & Showroom (Rounded Pills) */}
+                  {/* Concise Action: WhatsApp Logo Only & Showroom */}
                   <div className="pt-2.5 border-t border-brand-border/60 flex items-center justify-between gap-2">
                     <a
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white border border-emerald-200 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider cursor-pointer transition-all duration-300 shadow-sm"
+                      aria-label={`Enquire about ${item.title} on WhatsApp`}
+                      className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white border border-emerald-200 flex items-center justify-center cursor-pointer transition-all duration-300 shadow-sm hover:scale-105 flex-shrink-0"
                     >
-                      <FaWhatsapp aria-hidden="true" className="w-3.5 h-3.5 flex-shrink-0" />
-                      <span>Enquiry</span>
+                      <FaWhatsapp aria-hidden="true" className="w-4 h-4" />
                     </a>
 
                     <button
                       onClick={() => scrollToSection('#location')}
-                      className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brand-cream/60 hover:bg-brand-dark hover:text-white text-brand-dark border border-brand-border text-[10px] sm:text-[11px] font-medium cursor-pointer transition-all duration-300"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-brand-cream/60 hover:bg-brand-dark hover:text-white text-brand-dark border border-brand-border text-[10px] sm:text-[11px] font-medium cursor-pointer transition-all duration-300"
                     >
                       <span>Showroom</span>
                       <ArrowRight aria-hidden="true" className="w-3 h-3" />

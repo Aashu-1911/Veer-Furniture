@@ -34,33 +34,33 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-brand-dark/90 backdrop-blur-md shadow-lg py-3'
-            : 'bg-transparent py-4 sm:py-5'
+            ? 'bg-brand-dark/95 backdrop-blur-md shadow-lg py-2.5 sm:py-3'
+            : 'bg-transparent py-3 sm:py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-3">
             
-            {/* Brand Logo & Identification */}
+            {/* Brand Logo & Identification (Enlarged) */}
             <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className="group flex items-center gap-3 sm:gap-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne cursor-pointer select-none flex-shrink-0"
+              className="group flex items-center gap-3 sm:gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne cursor-pointer select-none flex-shrink-0"
             >
               <img
                 src={logoImg}
                 alt="Veer Furniture Mall Logo"
-                className="h-12 w-12 sm:h-14 sm:w-14 object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)] transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+                className="h-16 w-16 sm:h-20 sm:w-20 object-contain filter drop-shadow-[0_4px_12px_rgba(200,162,106,0.35)] transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
 
               <div className="flex flex-col text-left justify-center">
-                <span className="font-display text-xl sm:text-2xl font-bold tracking-wider uppercase text-white leading-none">
+                <span className="font-display text-2xl sm:text-3xl font-bold tracking-wider uppercase text-white leading-none">
                   VEER
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase text-brand-champagne mt-1 leading-none whitespace-nowrap">
+                <span className="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-brand-champagne mt-1.5 leading-none whitespace-nowrap">
                   FURNITURE MALL
                 </span>
               </div>

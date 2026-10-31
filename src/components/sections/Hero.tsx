@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative bg-brand-dark text-white overflow-hidden pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-36 lg:pb-20 scroll-mt-20 border-b border-white/10 min-h-[580px] lg:min-h-[640px] flex flex-col justify-between"
+      className="relative bg-brand-dark text-white overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16 lg:pt-44 lg:pb-20 scroll-mt-20 border-b border-white/10 min-h-[580px] lg:min-h-[640px] flex flex-col justify-between"
     >
       {/* Background Video with Luxury Editorial Overlay */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">

@@ -24,10 +24,10 @@ export const Footer: React.FC = () => {
                   />
                 </div>
                 <div className="flex flex-col select-none leading-none justify-center">
-                  <span className="font-display text-[19px] sm:text-[22px] font-medium tracking-[0.26em] uppercase text-white leading-none mr-[-0.26em]">
+                  <span className="font-display text-[19px] sm:text-[20px] lg:text-[21px] font-medium tracking-[0.27em] uppercase text-white leading-none mr-[-0.27em]">
                     VEER
                   </span>
-                  <span className="font-sans text-[8px] sm:text-[9.5px] font-bold tracking-[0.075em] sm:tracking-[0.08em] uppercase text-brand-champagne mt-1 sm:mt-1.5 leading-none whitespace-nowrap mr-[-0.075em] sm:mr-[-0.08em]">
+                  <span className="font-sans text-[8px] sm:text-[8.5px] lg:text-[9px] font-bold tracking-[0.075em] uppercase text-brand-champagne mt-1 sm:mt-1.5 leading-none whitespace-nowrap mr-[-0.075em]">
                     FURNITURE MALL
                   </span>
                 </div>

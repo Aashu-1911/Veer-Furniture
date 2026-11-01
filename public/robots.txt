@@ -8,3 +8,4 @@ Disallow: /build/
 
 # Sitemap location
 Sitemap: https://veer-furniture-mall-lohegaon.street-up.in/sitemap.xml
+

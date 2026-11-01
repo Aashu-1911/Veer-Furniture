@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { BUSINESS_DATA } from '../../data/business';
 import { Button } from '../ui/Button';
+import { ScrollReveal } from '../ui/ScrollReveal';
 import {
   MapPin,
   Phone,
@@ -54,18 +55,20 @@ export const Contact: React.FC = () => {
       <div id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <SectionHeading
-          eyebrow="Visit Our Store"
-          title="Lohgaon Showroom & Location"
-          description="Visit our store in Yojna Nagar near Pune Airport to experience frames, finishes, and comfort first-hand."
-        />
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="Visit Our Store"
+            title="Lohgaon Showroom & Location"
+            description="Visit our store in Yojna Nagar near Pune Airport to experience frames, finishes, and comfort first-hand."
+          />
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Left Column: Verified Location, Phone & Quick Desks (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
-            
-            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)] space-y-5">
+            <ScrollReveal delay={0.08}>
+              <div className="bg-white p-6 sm:p-7 rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)] space-y-5">
               
               <div className="border-b border-brand-border/70 pb-4">
                 <span className="text-[10px] uppercase tracking-wider text-brand-teak font-semibold block mb-0.5">
@@ -181,10 +184,12 @@ export const Contact: React.FC = () => {
               </a>
             </div>
 
+            </ScrollReveal>
           </div>
 
           {/* Right Column: Google Maps Embed + Consultation Form (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
+            <ScrollReveal delay={0.16}>
             
             {/* Interactive Embedded Google Map for Lohgaon */}
             <div className="bg-white rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)] overflow-hidden">
@@ -354,6 +359,7 @@ export const Contact: React.FC = () => {
                 </form>
               )}
             </div>
+            </ScrollReveal>
 
           </div>
 

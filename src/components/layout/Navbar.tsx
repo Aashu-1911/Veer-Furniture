@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out ${
           isScrolled
             ? 'bg-brand-dark/95 backdrop-blur-md shadow-lg py-2.5 sm:py-3'
             : 'bg-transparent py-3 sm:py-4'

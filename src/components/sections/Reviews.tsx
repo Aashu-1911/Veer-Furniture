@@ -3,6 +3,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { REVIEWS_DATA } from '../../data/reviews';
 import { BUSINESS_DATA } from '../../data/business';
 import { Star, ShieldCheck, ExternalLink, MessageSquareQuote } from 'lucide-react';
+import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const Reviews: React.FC = () => {
   // Duplicate reviews array to create seamless, continuous infinite right-to-left loop
@@ -13,51 +14,54 @@ export const Reviews: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with Verified Google Rating Badge */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
-          <SectionHeading
-            eyebrow="Customer Reviews"
-            title="Real Feedback from Pune Homeowners"
-            description="Genuine customer experiences from visitors who furnished their homes at Veer Furniture Mall Lohgaon."
-            className="mb-0 max-w-2xl"
-          />
+        <ScrollReveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
+            <SectionHeading
+              eyebrow="Customer Reviews"
+              title="Real Feedback from Pune Homeowners"
+              description="Genuine customer experiences from visitors who furnished their homes at Veer Furniture Mall Lohgaon."
+              className="mb-0 max-w-2xl"
+            />
 
-          {/* Factual Verified Google Rating Pill (Rounded-full) */}
-          <a
-            href={BUSINESS_DATA.maps.directUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View verified Google Maps reviews for Veer Furniture Mall Lohgaon"
-            className="group flex items-center gap-3 bg-white px-5 py-2.5 rounded-full border border-brand-border/80 shadow-sm hover:border-brand-champagne hover:shadow-md transition-all self-start md:self-end"
-          >
-            <div className="flex items-center gap-1 text-amber-500" aria-label="5 stars">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} aria-hidden="true" className="w-4 h-4 fill-current" />
-              ))}
-            </div>
-            <div className="text-xs">
-              <span className="font-semibold text-brand-dark mr-1">{BUSINESS_DATA.reputation.googleRating} ★</span>
-              <span className="text-brand-muted font-normal">on Google Maps</span>
-            </div>
-            <ExternalLink aria-hidden="true" className="w-3.5 h-3.5 text-brand-teak opacity-70 group-hover:opacity-100 ml-1 transition-opacity" />
-          </a>
-        </div>
+            {/* Factual Verified Google Rating Pill (Rounded-full) */}
+            <a
+              href={BUSINESS_DATA.maps.directUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View verified Google Maps reviews for Veer Furniture Mall Lohgaon"
+              className="group flex items-center gap-3 bg-white px-5 py-2.5 rounded-full border border-brand-border/80 shadow-sm hover:border-brand-champagne hover:shadow-md transition-all self-start md:self-end"
+            >
+              <div className="flex items-center gap-1 text-amber-500" aria-label="5 stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} aria-hidden="true" className="w-4 h-4 fill-current" />
+                ))}
+              </div>
+              <div className="text-xs">
+                <span className="font-semibold text-brand-dark mr-1">{BUSINESS_DATA.reputation.googleRating} ★</span>
+                <span className="text-brand-muted font-normal">on Google Maps</span>
+              </div>
+              <ExternalLink aria-hidden="true" className="w-3.5 h-3.5 text-brand-teak opacity-70 group-hover:opacity-100 ml-1 transition-opacity" />
+            </a>
+          </div>
+        </ScrollReveal>
 
       </div>
 
       {/* Infinite Horizontal Marquee Moving Right to Left */}
-      <div className="relative w-full overflow-hidden py-4">
-        {/* Left and right subtle fade gradient for luxury aesthetic */}
-        <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-brand-surface via-brand-surface/70 to-transparent z-10" />
-        <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-brand-surface via-brand-surface/70 to-transparent z-10" />
+      <ScrollReveal delay={0.1}>
+        <div className="relative w-full overflow-hidden py-4">
+          {/* Left and right subtle fade gradient for luxury aesthetic */}
+          <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-brand-surface via-brand-surface/70 to-transparent z-10" />
+          <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-brand-surface via-brand-surface/70 to-transparent z-10" />
 
-        {/* Moving Track: slides from right to left, pauses when hovered */}
-        <div 
-          className="animate-marquee-left flex gap-4 sm:gap-6 items-stretch"
-          aria-label="Scrolling customer reviews. Hover to pause."
-        >
-          {marqueeReviews.map((rev, idx) => (
-            <div
-              key={`${rev.id}-${idx}`}
+          {/* Moving Track: slides from right to left, pauses when hovered */}
+          <div 
+            className="animate-marquee-left flex gap-4 sm:gap-6 items-stretch"
+            aria-label="Scrolling customer reviews. Hover to pause."
+          >
+            {marqueeReviews.map((rev, idx) => (
+              <div
+                key={`${rev.id}-${idx}`}
               className="w-[300px] sm:w-[350px] md:w-[380px] flex-shrink-0 bg-white p-5 sm:p-6 rounded-2xl border border-brand-border/80 hover:border-brand-champagne/80 transition-all duration-300 flex flex-col justify-between space-y-3.5 shadow-[0_8px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_35px_rgba(200,162,106,0.14)] hover:-translate-y-1 select-none"
             >
               {/* Stars & Verified Badge */}
@@ -100,6 +104,7 @@ export const Reviews: React.FC = () => {
           ))}
         </div>
       </div>
+    </ScrollReveal>
 
       {/* Footer Strip with Direct Google Maps Link */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">

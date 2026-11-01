@@ -18,8 +18,8 @@ export const Reviews: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
             <SectionHeading
               eyebrow="Customer Reviews"
-              title="Real Feedback from Pune Homeowners"
-              description="Genuine customer experiences from visitors who furnished their homes at Veer Furniture Mall Lohgaon."
+              title="What Our Customers Say"
+              description="Real reviews from customers who bought furniture from our Lohgaon showroom."
               className="mb-0 max-w-2xl"
             />
 

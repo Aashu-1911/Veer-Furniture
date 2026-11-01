@@ -42,9 +42,9 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
             <SectionHeading
-              eyebrow="Browse Our Collection"
-              title="Featured Showroom Pieces"
-              description="Explore popular designs available for direct inspection at our Lohgaon store."
+              eyebrow="Our Collection"
+              title="Popular Furniture Pieces"
+              description="Explore popular furniture designs you can see and buy at our Lohgaon store."
               className="mb-0 max-w-2xl"
             />
 
@@ -52,7 +52,7 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
               onClick={() => scrollToSection('#location')}
               className="text-xs uppercase tracking-wider font-semibold text-brand-dark hover:text-brand-teak flex items-center gap-1.5 cursor-pointer self-start md:self-end"
             >
-              <span>Custom Dimension Blueprint</span>
+              <span>Custom Sizes Available</span>
               <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -167,20 +167,20 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                 Furnishing a 1BHK, 2BHK or 3BHK flat in Pune?
               </h4>
               <p className="text-zinc-300 text-xs sm:text-sm max-w-xl">
-                Get bundled sofa sets, master hydraulic beds, sliding wardrobes, and dining sets at honest mall wholesale rates.
+                Get complete sofa sets, beds, wardrobes, and dining tables at best factory wholesale rates.
               </p>
             </div>
 
             <a
               href={`https://wa.me/${BUSINESS_DATA.contact.whatsappNumber}?text=${encodeURIComponent(
-                'Hello Veer Furniture Mall Lohgaon, I would like details and pricing on your complete 2BHK / 3BHK home furniture packages.'
+                'Hello Veer Furniture Mall Lohgaon, I want details and pricing on complete 2BHK / 3BHK home furniture packages.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-champagne text-brand-dark font-semibold text-xs uppercase tracking-wider hover:bg-brand-champagneLight transition-colors whitespace-nowrap self-stretch sm:self-auto shadow-md"
             >
               <FaWhatsapp aria-hidden="true" className="w-4 h-4 flex-shrink-0" />
-              <span>Get Package Quotation</span>
+              <span>Get Package Price</span>
             </a>
           </div>
         </ScrollReveal>

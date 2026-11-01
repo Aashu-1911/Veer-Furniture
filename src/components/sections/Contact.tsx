@@ -58,8 +58,8 @@ export const Contact: React.FC = () => {
         <ScrollReveal>
           <SectionHeading
             eyebrow="Visit Our Store"
-            title="Lohgaon Showroom & Location"
-            description="Visit our store in Yojna Nagar near Pune Airport to experience frames, finishes, and comfort first-hand."
+            title="Visit Our Showroom in Lohgaon"
+            description="Visit our store in Yojna Nagar near Pune Airport to check out our furniture in person."
           />
         </ScrollReveal>
 
@@ -242,10 +242,10 @@ export const Contact: React.FC = () => {
             <div className="bg-white p-6 sm:p-7 rounded-2xl border border-brand-border/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <div className="mb-4">
                 <h4 className="font-display text-lg font-medium text-brand-dark">
-                  Request Custom Quote or Catalog
+                  Get Price or Catalog
                 </h4>
                 <p className="text-xs text-brand-muted mt-0.5">
-                  Sends directly to our Lohgaon showroom manager via WhatsApp for instantaneous response.
+                  Send your requirement to our team on WhatsApp for quick price and catalog.
                 </p>
               </div>
 

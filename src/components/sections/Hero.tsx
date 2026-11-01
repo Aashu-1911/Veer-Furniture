@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
 
             {/* Short Supporting Description */}
             <p className="font-sans text-sm sm:text-base lg:text-lg text-zinc-100 font-light max-w-xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              Direct showroom living, bedroom, and dining furniture crafted for modern Pune homes.
+              High quality sofa sets, beds, wardrobes, and dining tables at direct factory prices.
             </p>
 
             {/* Two Primary CTAs */}
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
                 onClick={() => scrollToSection('#collections')}
                 className="group shadow-architectural"
               >
-                <span>Explore Collections</span>
+                <span>View All Furniture</span>
                 <ArrowDownRight aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
               </Button>
 

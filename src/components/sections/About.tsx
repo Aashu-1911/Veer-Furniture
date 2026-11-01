@@ -10,23 +10,23 @@ export const About: React.FC = () => {
   const commitments = [
     {
       icon: Compass,
-      title: 'Apartment-Fit Sizing',
-      description: 'Customized to your exact room blueprints.',
+      title: 'Custom Sizes',
+      description: 'Made to fit your exact room size.',
     },
     {
       icon: ShieldCheck,
-      title: 'Wholesale Direct Pricing',
-      description: 'Factory-direct rates without middleman markups.',
+      title: 'Direct Factory Rates',
+      description: 'Best wholesale prices with no middleman.',
     },
     {
       icon: CheckCircle2,
-      title: 'In-Store Material Testing',
-      description: 'Inspect seasoned woods and upholstery in person.',
+      title: 'Check Quality in Store',
+      description: 'Touch and feel woods, fabrics, and foam in person.',
     },
     {
       icon: Truck,
-      title: 'Doorstep Assembly',
-      description: 'Careful transport and professional installation across Pune.',
+      title: 'Delivery & Setup',
+      description: 'Safe delivery and full setup anywhere in Pune.',
     },
   ];
 
@@ -38,8 +38,8 @@ export const About: React.FC = () => {
         <ScrollReveal>
           <SectionHeading
             eyebrow="Our Story"
-            title="Crafted Comfort for Everyday Living"
-            description="Veer Furniture Mall Lohgaon brings direct showroom and wholesale furniture solutions to homeowners across Pune."
+            title="Quality Furniture for Everyday Living"
+            description="Veer Furniture Mall in Lohgaon offers beautiful, durable furniture for your home at direct factory prices."
           />
         </ScrollReveal>
 
@@ -69,7 +69,7 @@ export const About: React.FC = () => {
             <ScrollReveal delay={0.08}>
               <div className="space-y-3 text-brand-muted text-sm sm:text-base leading-relaxed">
                 <p>
-                  Located at <strong className="text-brand-dark font-semibold">Yojna Nagar</strong> on Lohegaon-Wagholi Road, Veer Furniture Mall bridges the gap between high boutique markups and fragile furniture. We provide direct access to premium hardwoods, smooth hydraulic mechanisms, and custom sizing designed for modern Pune homes.
+                  Located at <strong className="text-brand-dark font-semibold">Yojna Nagar</strong> on Lohegaon-Wagholi Road, Veer Furniture Mall offers strong, stylish furniture at affordable prices. We help you choose the right wood, colors, and custom sizes for your home.
                 </p>
               </div>
             </ScrollReveal>

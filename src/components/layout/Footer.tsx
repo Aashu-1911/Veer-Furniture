@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
               </div>
 
               <p className="font-sans text-xs sm:text-sm text-zinc-400 mt-5 leading-relaxed font-normal max-w-sm">
-                Pune Airport Area's largest and most trusted modular furniture warehouse-showroom. Serving luxury comfort at factory-direct wholesale pricing across Pune.
+                Pune's trusted furniture store in Lohgaon. We offer quality sofas, beds, wardrobes, and home furniture at direct factory prices.
               </p>
 
               {/* Social Icons with Rounded Squares */}

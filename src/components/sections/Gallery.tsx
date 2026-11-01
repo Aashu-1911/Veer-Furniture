@@ -43,14 +43,14 @@ export const Gallery: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
             <SectionHeading
               eyebrow="Our Showroom"
-              title="Showroom Gallery & Real Spaces"
-              description="A glimpse of living, resting, and dining arrangements inside our Lohgaon showroom."
+              title="Showroom Gallery"
+              description="Photos of sofas, beds, wardrobes, and home setups inside our Lohgaon store."
               className="mb-0 max-w-2xl"
             />
 
             <div className="text-xs text-brand-muted flex items-center gap-2 self-start md:self-end">
               <Sparkles aria-hidden="true" className="w-3.5 h-3.5 text-brand-champagne flex-shrink-0" />
-              <span>Click any image to inspect in full resolution</span>
+              <span>Click any photo to view full size</span>
             </div>
           </div>
         </ScrollReveal>

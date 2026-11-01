@@ -26,15 +26,15 @@ export const WhatWeOffer: React.FC<WhatWeOfferProps> = ({ onSelectCategory }) =>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-4">
             <SectionHeading
               eyebrow="What We Offer"
-              title="Core Furniture Categories"
-              description="Explore our primary showroom categories designed and sized for modern Pune homes."
+              title="Our Furniture Categories"
+              description="Explore our wide range of home furniture made for modern Pune homes."
               className="mb-0 max-w-2xl"
             />
             <button
               onClick={() => scrollToSection('#collections')}
               className="text-xs uppercase tracking-wider font-semibold text-brand-teak hover:text-white hover:bg-brand-teak px-4 py-2 rounded-full border border-brand-border hover:border-brand-teak transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap self-start md:self-end shadow-sm"
             >
-              <span>View All Collections</span>
+              <span>View All Furniture</span>
               <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
             </button>
           </div>

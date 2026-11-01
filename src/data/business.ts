@@ -3,7 +3,7 @@ import { BusinessDetails } from '../types';
 export const BUSINESS_DATA: BusinessDetails = {
   name: 'Veer Furniture Mall',
   branch: 'Lohgaon, Pune',
-  tagline: 'Architectural Comfort & Crafted Living Solutions',
+  tagline: 'Quality Home Furniture at Direct Factory Prices',
   establishedNotice: 'Serving Lohgaon, Dhanori, Viman Nagar & Pune Airport Area',
   address: {
     street: 'Yojna Nagar, Lohegaon-Wagholi Road',
@@ -23,14 +23,14 @@ export const BUSINESS_DATA: BusinessDetails = {
     phoneDisplay: '+91 98042 62929',
     phoneCallable: 'tel:+919804262929',
     whatsappNumber: '919804262929',
-    whatsappPreFilledText: 'Hello Veer Furniture Mall Lohgaon team, I am interested in exploring furniture collections for my home in Pune.',
+    whatsappPreFilledText: 'Hello Veer Furniture Mall Lohgaon, I want to inquire about furniture for my home in Pune.',
     email: 'veerfurnituremall0@gmail.com',
     secondaryPhones: ['+91 99701 49429', '+91 96377 42929'],
   },
   hours: {
     days: 'Monday – Sunday (7 Days Open)',
     timing: '9:00 AM – 10:00 PM',
-    openStatusNotice: 'Open Daily for In-Store Consultation & Walk-ins',
+    openStatusNotice: 'Open Daily 9:00 AM – 10:00 PM (Walk-ins Welcome)',
   },
   maps: {
     shortUrl: 'https://maps.app.goo.gl/FLrhfDyhQdjNXYRBA?g_st=aw',

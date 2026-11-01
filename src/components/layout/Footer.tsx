@@ -23,11 +23,11 @@ export const Footer: React.FC = () => {
                     className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)]"
                   />
                 </div>
-                <div className="flex flex-col select-none leading-none">
-                  <span className="font-display text-lg sm:text-xl font-medium tracking-[0.25em] uppercase text-white leading-none mr-[-0.25em]">
+                <div className="flex flex-col select-none leading-none justify-center">
+                  <span className="font-display text-[19px] sm:text-[22px] font-medium tracking-[0.26em] uppercase text-white leading-none mr-[-0.26em]">
                     VEER
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] uppercase text-brand-champagne mt-1.5 leading-none whitespace-nowrap pl-[1px] mr-[-0.18em]">
+                  <span className="font-sans text-[8px] sm:text-[9.5px] font-bold tracking-[0.075em] sm:tracking-[0.08em] uppercase text-brand-champagne mt-1 sm:mt-1.5 leading-none whitespace-nowrap mr-[-0.075em] sm:mr-[-0.08em]">
                     FURNITURE MALL
                   </span>
                 </div>

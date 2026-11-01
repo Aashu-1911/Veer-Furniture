@@ -35,9 +35,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
 
   return (
     <>
-      {/* Dimmed backdrop to close on tap */}
+      {/* Transparent backdrop to close on tap outside */}
       <div
-        className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm transition-opacity duration-300 md:hidden"
+        className="fixed inset-0 z-50 bg-transparent md:hidden"
         onClick={onClose}
         aria-hidden="true"
       />

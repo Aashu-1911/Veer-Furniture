@@ -1,0 +1,10 @@
+# robots.txt for Veer Furniture Mall Lohgaon
+User-agent: *
+Allow: /
+
+# Disallow build and internal paths
+Disallow: /dist/
+Disallow: /build/
+
+# Sitemap location
+Sitemap: https://veer-furniture-mall-lohegaon.street-up.in/sitemap.xml

@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             >
               <img
                 src={logoImg}
-                alt="Veer Furniture Mall Logo"
+                alt="Veer Furniture Mall Lohgaon Logo"
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain filter drop-shadow-[0_4px_12px_rgba(200,162,106,0.35)] transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
 

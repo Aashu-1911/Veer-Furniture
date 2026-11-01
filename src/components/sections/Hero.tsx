@@ -60,12 +60,12 @@ export const Hero: React.FC = () => {
 
             {/* Elegant Display Heading */}
             <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-[1.12] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-              Furniture That Makes a House Feel Like Yours.
+              Furniture Showroom in Lohgaon, Pune
             </h1>
 
             {/* Short Supporting Description */}
             <p className="font-sans text-sm sm:text-base lg:text-lg text-zinc-100 font-light max-w-xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              High quality sofa sets, beds, wardrobes, and dining tables at direct factory prices.
+              Veer Furniture Mall offers quality sofa sets, hydraulic beds, and wardrobes near Pune Airport at direct factory prices.
             </p>
 
             {/* Two Primary CTAs */}

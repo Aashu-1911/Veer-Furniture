@@ -95,7 +95,7 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                   <div className="relative h-36 sm:h-48 lg:h-52 w-full overflow-hidden bg-brand-charcoal">
                     <img
                       src={item.imageUrl}
-                      alt={`${item.title} - ${item.subtitle}`}
+                      alt={`${item.title} - ${item.subtitle} at Veer Furniture Mall Lohgaon`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />

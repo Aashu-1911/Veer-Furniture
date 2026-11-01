@@ -102,7 +102,7 @@ export const Gallery: React.FC = () => {
                   <div className="relative overflow-hidden h-36 sm:h-56 lg:h-64 w-full">
                     <img
                       src={item.imageUrl}
-                      alt={item.title}
+                      alt={`${item.title} - Veer Furniture Mall Lohgaon Showroom`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />

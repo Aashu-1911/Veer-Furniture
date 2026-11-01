@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
                 <div className="w-14 h-14 rounded-full overflow-hidden bg-brand-charcoal border border-white/20 p-1 flex items-center justify-center flex-shrink-0 shadow-md">
                   <img
                     src={logoImg}
-                    alt="Veer Furniture Mall Logo"
+                    alt="Veer Furniture Mall Lohgaon Logo"
                     className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(200,162,106,0.3)]"
                   />
                 </div>

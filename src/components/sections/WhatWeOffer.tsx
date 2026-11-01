@@ -52,7 +52,7 @@ export const WhatWeOffer: React.FC<WhatWeOfferProps> = ({ onSelectCategory }) =>
                 <div className="relative h-32 sm:h-44 lg:h-48 w-full overflow-hidden bg-brand-charcoal">
                   <img
                     src={item.imageUrl}
-                    alt={item.title}
+                    alt={`${item.title} - Veer Furniture Mall Lohgaon`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />

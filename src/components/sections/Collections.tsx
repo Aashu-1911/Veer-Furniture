@@ -96,12 +96,13 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                   />
 
                   {/* Category Tag & Badge */}
-                  <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
-                    <span className="bg-brand-dark/85 backdrop-blur-md text-white text-[9px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-medium shadow-sm">
-                      {item.category}
+                  <div className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 flex items-center gap-1.5 max-w-[88%]">
+                    <span className="bg-brand-dark/85 backdrop-blur-md text-white text-[8.5px] sm:text-[9.5px] uppercase tracking-wider px-2 sm:px-2.5 py-0.5 rounded-full font-medium shadow-sm whitespace-nowrap truncate">
+                      <span className="sm:hidden">{item.shortTag || item.category}</span>
+                      <span className="hidden sm:inline">{item.category}</span>
                     </span>
                     {item.accentBadge && (
-                      <span className="hidden sm:inline-flex bg-brand-champagne text-brand-dark text-[9px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full items-center gap-1 shadow-sm">
+                      <span className="hidden sm:inline-flex bg-brand-champagne text-brand-dark text-[9px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full items-center gap-1 shadow-sm whitespace-nowrap">
                         <Sparkles aria-hidden="true" className="w-2.5 h-2.5" />
                         {item.accentBadge}
                       </span>
@@ -110,12 +111,12 @@ export const Collections: React.FC<CollectionsProps> = ({ initialFilter = 'All' 
                 </div>
 
                 {/* Content Area */}
-                <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
+                <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
                   <div>
-                    <span className="text-[10px] text-brand-teak uppercase tracking-wider font-medium line-clamp-1">
+                    <span className="text-[10px] sm:text-xs text-brand-teak uppercase tracking-wider font-medium line-clamp-1">
                       {item.subtitle}
                     </span>
-                    <h3 className="font-display text-sm sm:text-base lg:text-lg font-medium text-brand-dark group-hover:text-brand-teak transition-colors line-clamp-1 mt-0.5">
+                    <h3 className="font-display text-[13px] sm:text-base lg:text-lg font-medium text-brand-dark group-hover:text-brand-teak transition-colors line-clamp-2 min-h-[2.35rem] sm:min-h-[2.85rem] leading-snug mt-0.5">
                       {item.title}
                     </h3>
                     <p className="text-[11px] sm:text-xs text-brand-muted mt-1 line-clamp-2 leading-relaxed">

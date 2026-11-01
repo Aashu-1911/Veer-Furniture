@@ -53,6 +53,7 @@ export interface CollectionItem {
   title: string;
   category: string;
   subtitle: string;
+  shortTag?: string;
   description: string;
   materials: string[];
   dimensionsSample: string;

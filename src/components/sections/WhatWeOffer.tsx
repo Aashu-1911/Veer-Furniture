@@ -53,15 +53,16 @@ export const WhatWeOffer: React.FC<WhatWeOfferProps> = ({ onSelectCategory }) =>
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute top-2.5 left-2.5 bg-brand-dark/85 backdrop-blur-md text-white text-[9px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-medium shadow-sm">
-                  {item.subtitle}
+                <div className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 bg-brand-dark/85 backdrop-blur-md text-white text-[8.5px] sm:text-[9.5px] uppercase tracking-wider px-2 sm:px-2.5 py-0.5 rounded-full font-medium shadow-sm whitespace-nowrap max-w-[88%] truncate">
+                  <span className="sm:hidden">{item.shortTag}</span>
+                  <span className="hidden sm:inline">{item.subtitle}</span>
                 </div>
               </div>
 
-              {/* Text Area: ~85-100px */}
-              <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
+              {/* Text Area */}
+              <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
                 <div>
-                  <h3 className="font-display text-sm sm:text-lg font-medium text-brand-dark group-hover:text-brand-teak transition-colors line-clamp-1">
+                  <h3 className="font-display text-[13px] sm:text-base lg:text-lg font-medium text-brand-dark group-hover:text-brand-teak transition-colors line-clamp-2 min-h-[2.35rem] sm:min-h-[2.85rem] leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-[11px] sm:text-xs text-brand-muted mt-1 line-clamp-2 leading-relaxed">

@@ -41,19 +41,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 lg:gap-8">
             
-            {/* Brand Logo & Identification (Refined mobile & desktop proportion) */}
+            {/* Brand Logo & Identification */}
             <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className="group flex items-center gap-2.5 sm:gap-3.5 mr-auto lg:mr-10 xl:mr-14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne cursor-pointer select-none flex-shrink-0"
+              className="group flex items-center gap-3 sm:gap-4 mr-auto lg:mr-10 xl:mr-14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne cursor-pointer select-none flex-shrink-0"
             >
               <img
                 src={logoImg}
                 alt="Veer Furniture Mall Logo"
-                className="h-12 w-12 sm:h-16 sm:w-16 md:h-18 md:w-18 object-contain filter drop-shadow-[0_3px_10px_rgba(200,162,106,0.35)] transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+                className="h-16 w-16 sm:h-20 sm:w-20 object-contain filter drop-shadow-[0_4px_12px_rgba(200,162,106,0.35)] transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
               />
 
               <div className="flex flex-col text-left justify-center">

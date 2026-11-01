@@ -157,19 +157,34 @@ export const Footer: React.FC = () => {
                 <div className="flex gap-3 text-zinc-300">
                   <MapPin className="w-4 h-4 text-brand-champagne flex-shrink-0 mt-0.5" />
                   <span className="leading-relaxed">
-                    Veer Furniture Mall, Yojna Nagar, Lohegaon-Wagholi Road, Pune International Airport Area, Lohgaon, Pune, Maharashtra 411047
+                    Veer Furniture Mall, Opp. Yojana Poultry Farm, Yojna Nagar, Lohegaon-Wagholi Road, Lohgaon, Pune, Maharashtra 411047
                   </span>
                 </div>
 
                 {/* Phone */}
-                <div className="flex gap-3 text-zinc-300 items-center">
-                  <Phone className="w-4 h-4 text-brand-champagne flex-shrink-0" />
-                  <a
-                    href={BUSINESS_DATA.contact.phoneCallable}
-                    className="hover:text-brand-champagne transition-colors font-medium"
-                  >
-                    {BUSINESS_DATA.contact.phoneDisplay}
-                  </a>
+                <div className="flex gap-3 text-zinc-300 items-start">
+                  <Phone className="w-4 h-4 text-brand-champagne flex-shrink-0 mt-0.5" />
+                  <div className="flex flex-col">
+                    <a
+                      href={BUSINESS_DATA.contact.phoneCallable}
+                      className="hover:text-brand-champagne transition-colors font-medium"
+                    >
+                      {BUSINESS_DATA.contact.phoneDisplay}
+                    </a>
+                    {BUSINESS_DATA.contact.secondaryPhones && (
+                      <div className="flex flex-wrap gap-x-2 text-xs text-zinc-400 mt-0.5">
+                        {BUSINESS_DATA.contact.secondaryPhones.map((p, i) => (
+                          <a
+                            key={i}
+                            href={`tel:${p.replace(/\s+/g, '')}`}
+                            className="hover:text-brand-champagne transition-colors"
+                          >
+                            {p}{i < BUSINESS_DATA.contact.secondaryPhones!.length - 1 ? ' • ' : ''}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 {/* Email */}

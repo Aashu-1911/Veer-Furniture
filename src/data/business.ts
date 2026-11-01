@@ -8,11 +8,11 @@ export const BUSINESS_DATA: BusinessDetails = {
   address: {
     street: 'Yojna Nagar, Lohegaon-Wagholi Road',
     locality: 'Pune International Airport Area, Lohgaon',
-    landmark: 'Near Yojna Poultry & Indian Oil Petrol Pump corridor',
+    landmark: 'Opp. Yojana Poultry Farm',
     city: 'Pune',
     state: 'Maharashtra',
     pincode: '411047',
-    fullFormatted: 'Yojna Nagar, Pune International Airport Area, Lohgaon, Pune, Maharashtra 411047',
+    fullFormatted: 'Opp. Yojana Poultry Farm, Yojna Nagar, Lohegaon-Wagholi Road, Pune, Maharashtra 411047',
   },
   coordinates: {
     lat: 18.5913,
@@ -20,11 +20,12 @@ export const BUSINESS_DATA: BusinessDetails = {
     formatted: '18.5913° N, 73.9189° E',
   },
   contact: {
-    phoneDisplay: '+91 96377 42929',
-    phoneCallable: 'tel:+919637742929',
-    whatsappNumber: '919637742929',
+    phoneDisplay: '+91 98042 62929',
+    phoneCallable: 'tel:+919804262929',
+    whatsappNumber: '919804262929',
     whatsappPreFilledText: 'Hello Veer Furniture Mall Lohgaon team, I am interested in exploring furniture collections for my home in Pune.',
     email: 'veerfurnituremall0@gmail.com',
+    secondaryPhones: ['+91 99701 49429', '+91 96377 42929'],
   },
   hours: {
     days: 'Monday – Sunday (7 Days Open)',
@@ -43,7 +44,7 @@ export const BUSINESS_DATA: BusinessDetails = {
     highlightPill: 'Rated 4.9 ★ on Google Maps',
   },
   social: {
-    instagram: 'https://instagram.com/veerfurnituremall_chakan',
+    instagram: 'https://www.instagram.com/veerfurniture_lohegoan?exln=d2I4aHhhcmJsN2Fi',
     facebook: 'https://facebook.com/veerfurnituremall',
     youtube: 'https://youtube.com/@veerfurnituremall',
   },

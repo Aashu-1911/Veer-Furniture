@@ -123,6 +123,20 @@ export const Contact: React.FC = () => {
                     >
                       {BUSINESS_DATA.contact.phoneDisplay}
                     </a>
+                    {BUSINESS_DATA.contact.secondaryPhones && (
+                      <div className="text-xs text-brand-muted mt-1 space-x-1">
+                        <span>Alt:</span>
+                        {BUSINESS_DATA.contact.secondaryPhones.map((phone, idx) => (
+                          <a
+                            key={idx}
+                            href={`tel:${phone.replace(/\s+/g, '')}`}
+                            className="hover:text-brand-teak transition-colors inline-block font-medium"
+                          >
+                            {phone}{idx < BUSINESS_DATA.contact.secondaryPhones!.length - 1 ? ' · ' : ''}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

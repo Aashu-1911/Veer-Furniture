@@ -23,6 +23,7 @@ export interface BusinessDetails {
     whatsappNumber: string;
     whatsappPreFilledText: string;
     email?: string;
+    secondaryPhones?: string[];
   };
   hours: {
     days: string;

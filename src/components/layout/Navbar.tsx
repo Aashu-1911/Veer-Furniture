@@ -57,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               />
 
               <div className="flex flex-col text-left justify-center">
-                <span className="font-display text-2xl sm:text-3xl font-bold tracking-wider uppercase text-white leading-none">
+                <span className="font-display text-2xl sm:text-3xl font-medium tracking-wider uppercase text-white leading-none">
                   VEER
                 </span>
                 <span className="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-brand-champagne mt-1.5 leading-none whitespace-nowrap">
